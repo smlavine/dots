@@ -37,8 +37,9 @@ export PATH="$GOBIN:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # Startup things
-
 neofetch
-# startx only if a dwm process is not already running.
+
+# Run startx only if a dwm process is not already running. This allows the user
+# to open a text terminal in another tty.
 [ "$(ps -a | grep dwm)" ] && echo "dwm already running" || startx
 
