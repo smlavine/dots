@@ -18,6 +18,8 @@ fi
 
 export EDITOR="nvim"
 
+export LESSHISTFILE="/dev/null"
+
 # Environment variables for the Go programming language
 export GOPATH="$HOME/code/go"
 export GOBIN="$GOPATH/bin"
