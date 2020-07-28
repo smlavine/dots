@@ -12,12 +12,14 @@ get_key() {
 
 set_batinfo() {
 	# If the computer is not battery-powered, show no battery info.
-	if [ acpi | grep "No support for device type" ]
+	acpi 2>&1 | grep "No support for device type"
+	if [ $? -eq 0 ]
 	then
 		batinfo=""
+		echo "NO SUPPORT DETECTED" > /home/sml/OUTPUT.txt
 	else
 		# Battery percentage
-		batinfo="$(acpi | awk '{print $4}' | tr -d ',')"
+		batinfo=" $(acpi | awk '{print $4}' | tr -d ',')"
 		# Battery time remaining
 		batinfo="$batinfo $(acpi | awk '{print $5}' | sed 's/:/h/' | sed 's/:/m/' | cut -c -6)"
 		# Battery status
@@ -41,7 +43,7 @@ set_batinfo() {
 get_key
 set_batinfo
 
-while xsetroot -name " $key $(vol) $(date "+%a %b %d %r %Z %Y") $batinfo"
+while xsetroot -name " $key $(vol) $(date "+%a %b %d %r %Z %Y")$batinfo"
 do
     get_key
     set_batinfo
