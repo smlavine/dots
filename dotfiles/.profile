@@ -25,6 +25,11 @@ done
 
 export EDITOR="nvim"
 
+# Set XDG Base Directory specification variables.
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+
 # add .local to $PATH
 export PATH="$HOME/.local/bin:$PATH"
 
