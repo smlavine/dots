@@ -16,30 +16,29 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-# Add smlss scripts and suckless utilities to path in smlss folder
-export PATH="$HOME/smlss/scripts:$PATH"
-for d in $HOME/smlss/suckless/*;
-do
-    export PATH="$d:$PATH"
-done
-
 export EDITOR="nvim"
+
+# Environment variables for the Go programming language
+export GOPATH="$HOME/code/go"
+export GOBIN="$GOPATH/bin"
 
 # Set XDG Base Directory specification variables.
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 
-# add .local to $PATH
+# Add smlss scripts to $PATH
+export PATH="$HOME/smlss/scripts:$PATH"
+
+# Add .local to $PATH
 export PATH="$HOME/.local/bin:$PATH"
 
-# variables for the Go programming language
-export GOPATH="$HOME/code/go"
-export GOBIN="$GOPATH/bin"
+# Add Rust executables to $PATH
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# Add Go programs to $PATH
 export PATH="$GOBIN:$PATH"
 
-# add Rust stuff to $PATH
-export PATH="$HOME/.cargo/bin:$PATH"
 
 # Startup things
 neofetch
