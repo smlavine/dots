@@ -16,7 +16,6 @@ set_batinfo() {
 	if [ $? -eq 0 ]
 	then
 		batinfo=""
-		echo "NO SUPPORT DETECTED" > /home/sml/OUTPUT.txt
 	else
 		# Battery percentage
 		batinfo=" $(acpi | awk '{print $4}' | tr -d ',')"
