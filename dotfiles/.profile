@@ -16,9 +16,6 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-# remove vim backup from previous session
-rm -f ~/.vimtmp/*
-
 # Add smlss scripts and suckless utilities to path in smlss folder
 export PATH="$HOME/smlss/scripts:$PATH"
 for d in $HOME/smlss/suckless/*;
