@@ -42,7 +42,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$GOBIN:$PATH"
 
 
-# Startup things
+# Display neofetch on user login. I think it looks cool, okay?
 neofetch
 
 # Run startx only if a dwm process is not already running. This allows the user
