@@ -29,6 +29,10 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 
+# Make Rust-related data follow the XDG Base Directory specification.
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+
 # Add smlss scripts to $PATH
 export PATH="$HOME/smlss/scripts:$PATH"
 
