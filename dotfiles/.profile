@@ -33,6 +33,9 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 
+# Make libdvdcss data follow the XDG Base Directory specification.
+export DVDCSS_CACHE="$XDG_DATA_HOME/dvdcss"
+
 # Add smlss scripts to $PATH
 export PATH="$HOME/smlss/scripts:$PATH"
 
