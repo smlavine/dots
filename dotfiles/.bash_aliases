@@ -2,6 +2,9 @@
 
 # Alias definitions.
 
+alias l='ls -CAF'
+alias ll='ls -AlhF'
+
 alias py='python3'
 
 alias cl='clear; l'
