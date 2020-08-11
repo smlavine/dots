@@ -63,10 +63,10 @@ fi
 
 export TERM=st
 
-# prompt with git branch name
 export PS1='$ '
+
+set -o vi
 
 # print on start of shell
 echo "$(pwd)"
 
-set -o vi
