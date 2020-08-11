@@ -5,9 +5,6 @@ filetype plugin indent on
 set wildmode=longest,list,full
 set wildmenu
 
-" Execute bash aliases from '!' commands
-set shellcmdflag=-ic
-
 " Makes backspace 'normal'
 set backspace=indent,eol,start
 
