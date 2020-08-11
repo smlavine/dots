@@ -15,5 +15,8 @@ alias ed='ed -p:'
 
 alias r='ranger'
 
+alias f='firefox'
+alias z='zathura'
+
 # Sums up numbers on each line in standard input
 alias count='paste -sd+ - | bc'
