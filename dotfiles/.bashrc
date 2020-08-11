@@ -35,10 +35,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# some more ls aliases
-alias ll='ls -AlhF'
-alias l='ls -CAF'
-
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
