@@ -16,6 +16,8 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+export TERM="xterm-256color"
+
 export EDITOR="nvim"
 
 export LESSHISTFILE="/dev/null"

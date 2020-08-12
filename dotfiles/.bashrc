@@ -61,8 +61,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export TERM=st
-
 export PS1='$ '
 
 set -o vi
