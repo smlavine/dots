@@ -9,7 +9,10 @@ alias py='python3'
 
 alias cl='clear; l'
 
-alias dh='du -h | sort -h'
+# Sorted list of biggest files/directories in current directory. Only lists
+# items in current directory -- that's what the grep does (removing anything
+# with more than one directory level to it)
+alias dh="du -h | sort -h | grep -v '.*/.*/.*'"
 
 alias v='nvim'
 alias vi='nvim'
