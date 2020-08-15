@@ -9,6 +9,8 @@ alias py='python3'
 
 alias cl='clear; l'
 
+alias dh=;du -h | sort -h'
+
 alias v='nvim'
 alias vi='nvim'
 alias ed='ed -p:'
