@@ -9,7 +9,7 @@ alias py='python3'
 
 alias cl='clear; l'
 
-alias dh=;du -h | sort -h'
+alias dh='du -h | sort -h'
 
 alias v='nvim'
 alias vi='nvim'
@@ -22,3 +22,4 @@ alias z='zathura'
 
 # Sums up numbers on each line in standard input
 alias count='paste -sd+ - | bc'
+
