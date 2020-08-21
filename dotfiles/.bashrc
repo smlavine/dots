@@ -38,7 +38,7 @@ shopt -s globstar
 [ -f ~/.recently-used ] && rm ~/.recently-used
 
 # disable bash history
-HISTFILE=/dev/null
+unset HISTFILE
 
 # load aliases
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
