@@ -8,6 +8,17 @@ case $- in
       *) return;;
 esac
 
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
 # load aliases
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 
@@ -31,18 +42,6 @@ fi
 [ -f ~/.calc_history ] && rm ~/.calc_history
 [ -f ~/.python_history ] && rm ~/.python_history
 [ -f ~/.recently-used ] && rm ~/.recently-used
-
-
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
 
 export PS1='$ '
 
