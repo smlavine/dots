@@ -48,5 +48,5 @@ export PS1='$ '
 set -o vi
 
 # print on start of shell
-echo "$(pwd)"
+pwd
 
