@@ -8,6 +8,9 @@ case $- in
       *) return;;
 esac
 
+# load aliases
+[ -f ~/.bash_aliases ] && . ~/.bash_aliases
+
 # disable bash history
 HISTFILE=/dev/null
 
@@ -22,17 +25,6 @@ shopt -s globstar
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    alias dir='dir --color=auto'
-    alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
 fi
 
 # remove files that store data when I don't want them to.
