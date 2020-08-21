@@ -16,41 +16,6 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-export TERM="xterm-256color"
-
-export EDITOR="nvim"
-
-export LESSHISTFILE="/dev/null"
-
-# Environment variables for the Go programming language
-export GOPATH="$HOME/code/go"
-export GOBIN="$GOPATH/bin"
-
-# Set XDG Base Directory specification variables.
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_DATA_HOME="$HOME/.local/share"
-
-# Make Rust-related data follow the XDG Base Directory specification.
-export CARGO_HOME="$XDG_DATA_HOME/cargo"
-export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
-
-# Make libdvdcss data follow the XDG Base Directory specification.
-export DVDCSS_CACHE="$XDG_DATA_HOME/dvdcss"
-
-# Add smlss scripts to $PATH
-export PATH="$HOME/smlss/scripts:$PATH"
-
-# Add .local to $PATH
-export PATH="$HOME/.local/bin:$PATH"
-
-# Add Rust executables to $PATH
-export PATH="$HOME/.cargo/bin:$PATH"
-
-# Add Go programs to $PATH
-export PATH="$GOBIN:$PATH"
-
-
 # Display neofetch on user login. I think it looks cool, okay?
 neofetch
 
