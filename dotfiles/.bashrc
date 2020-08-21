@@ -19,12 +19,36 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+fi
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+shopt -s globstar
+
+# remove files that store data when I don't want them to.
+[ -f ~/.calc_history ] && rm ~/.calc_history
+[ -f ~/.python_history ] && rm ~/.python_history
+[ -f ~/.recently-used ] && rm ~/.recently-used
+
+# disable bash history
+HISTFILE=/dev/null
+
 # load aliases
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 
+# load environment variables
 export TERM="xterm-256color"
 
 export EDITOR="nvim"
+
+export PS1='$ '
 
 export LESSHISTFILE="/dev/null"
 
@@ -55,29 +79,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # Add Go programs to $PATH
 export PATH="$GOBIN:$PATH"
-
-# disable bash history
-HISTFILE=/dev/null
-
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-shopt -s globstar
-
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-fi
-
-# remove files that store data when I don't want them to.
-[ -f ~/.calc_history ] && rm ~/.calc_history
-[ -f ~/.python_history ] && rm ~/.python_history
-[ -f ~/.recently-used ] && rm ~/.recently-used
-
-export PS1='$ '
 
 set -o vi
 
