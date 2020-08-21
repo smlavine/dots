@@ -36,15 +36,10 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # remove files that store data when I don't want them to.
-if [ -f ~/.calc_history ]; then
-    rm ~/.calc_history
-fi
-if [ -f ~/.python_history ]; then
-    rm ~/.python_history
-fi
-if [ -f ~/.recently-used ]; then
-    rm ~/.recently-used
-fi
+[ -f ~/.calc_history ] && rm ~/.calc_history
+[ -f ~/.python_history ] && rm ~/.python_history
+[ -f ~/.recently-used ] && rm ~/.recently-used
+
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
