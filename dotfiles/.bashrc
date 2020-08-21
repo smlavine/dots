@@ -57,7 +57,7 @@ fi
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    test -r "$XDG_CONFIG_HOME/dircolors" && eval "$(dircolors -b "$XDG_CONFIG_HOME/dircolors")" || eval "$(dircolors -b)"
 fi
 
 # check the window size after each command and, if necessary,
