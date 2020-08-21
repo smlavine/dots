@@ -45,14 +45,13 @@ unset HISTFILE
 
 # load environment variables
 export TERM="xterm-256color"
-
 export EDITOR="nvim"
-
 export PS1='$ '
 
+# Disable less history
 export LESSHISTFILE="/dev/null"
 
-# Environment variables for the Go programming language
+# Go programming language
 export GOPATH="$HOME/code/go"
 export GOBIN="$GOPATH/bin"
 
@@ -70,13 +69,10 @@ export DVDCSS_CACHE="$XDG_DATA_HOME/dvdcss"
 
 # Add smlss scripts to $PATH
 export PATH="$HOME/smlss/scripts:$PATH"
-
 # Add .local to $PATH
 export PATH="$HOME/.local/bin:$PATH"
-
 # Add Rust executables to $PATH
 export PATH="$HOME/.cargo/bin:$PATH"
-
 # Add Go programs to $PATH
 export PATH="$GOBIN:$PATH"
 
