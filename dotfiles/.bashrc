@@ -55,10 +55,12 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r "$XDG_CONFIG_HOME/dircolors" && eval "$(dircolors -b "$XDG_CONFIG_HOME/dircolors")" || eval "$(dircolors -b)"
-fi
+# enable custom dircolors
+[ -x /usr/bin/dircolors ] &&
+	test -r "$XDG_CONFIG_HOME/dircolors" &&
+	eval "$(dircolors -b "$XDG_CONFIG_HOME/dircolors")" \
+|| eval "$(dircolors -b)"
+
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
