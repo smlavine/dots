@@ -42,7 +42,7 @@ set_batinfo() {
 get_key
 set_batinfo
 
-while xsetroot -name " $key $(vol) $(date "+%a %b %d %r %Z %Y")$batinfo"
+while xsetroot -name " $key $(vol) $(date "+%a %b %d %r %Z")$batinfo"
 do
     get_key
     set_batinfo
