@@ -55,7 +55,7 @@ let g:netrw_dirhistmax=0
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " I try to keep my max columns to 80 lines. This lets me know when I go over.
-highlight ColorColumn ctermbg=4
+highlight ColorColumn ctermbg=0
 let &colorcolumn=join(range(81,81),",")
 
 " From StackOverflow
