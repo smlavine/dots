@@ -1,3 +1,4 @@
 # Player options
 player=mpv
 player-no-close
+default-stream="720p60,720p,1080p,1080p60,best"
