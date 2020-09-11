@@ -1,0 +1,4 @@
+.include /etc/pulse/default.pa
+
+load-module module-echo-cancel source_name=microphone
+set-default-source microphone
