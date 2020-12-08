@@ -35,6 +35,10 @@ export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 # Make libdvdcss data follow the XDG Base Directory specification.
 export DVDCSS_CACHE="$XDG_DATA_HOME/dvdcss"
 
+# Make ncurses (terminfo) data follow the XDG Base Directory specification.
+export TERMINFO="$XDG_DATA_HOME/terminfo"
+export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
+
 # Add smlss scripts to $PATH
 export PATH="$HOME/smlss/scripts:$PATH"
 # Add .local to $PATH
