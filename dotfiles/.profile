@@ -10,10 +10,7 @@
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
-    fi
+    [ -f "$HOME/.bashrc" ] && . "$HOME/.bashrc"
 fi
 
 # Display neofetch on user login. I think it looks cool, okay?
