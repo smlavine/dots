@@ -31,6 +31,8 @@ alias r='ranger'
 alias f='firefox'
 alias z='zathura'
 
+alias yay='yay --sudoloop' # prevents sudo timeout on long builds
+
 # Sums up numbers on each line in standard input
 alias count='paste -sd+ - | bc'
 
