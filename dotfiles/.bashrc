@@ -39,6 +39,9 @@ export DVDCSS_CACHE="$XDG_DATA_HOME/dvdcss"
 export TERMINFO="$XDG_DATA_HOME/terminfo"
 export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 
+# Make pass data follow the XDG Base Directory specification.
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
+
 # Add smlss scripts to $PATH
 export PATH="$HOME/smlss/scripts:$PATH"
 # Add .local to $PATH
