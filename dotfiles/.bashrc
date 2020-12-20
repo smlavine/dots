@@ -9,50 +9,10 @@ case $- in
 esac
 
 # load aliases
-[ -f ~/.bash_aliases ] && . ~/.bash_aliases
+[ -f ~/.config/bash/aliases ] && . ~/.config/bash/aliases
 
 # load environment variables
-export TERM="xterm-256color"
-export EDITOR="nvim"
-export PS1='$ '
-
-# Disable less history
-export LESSHISTFILE="/dev/null"
-
-# Go programming language
-export GOPATH="$HOME/code/go"
-export GOBIN="$GOPATH/bin"
-
-# Set XDG Base Directory specification variables.
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_DATA_HOME="$HOME/.local/share"
-
-# Make Rust-related data follow the XDG Base Directory specification.
-export CARGO_HOME="$XDG_DATA_HOME/cargo"
-export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
-
-# Make libdvdcss data follow the XDG Base Directory specification.
-export DVDCSS_CACHE="$XDG_DATA_HOME/dvdcss"
-
-# Make ncurses (terminfo) data follow the XDG Base Directory specification.
-export TERMINFO="$XDG_DATA_HOME/terminfo"
-export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
-
-# Make pass data follow the XDG Base Directory specification.
-export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
-
-# Allow for smlss to possibly, eventually, follow the XDG Base Directory specification.
-export SMLSS_DIR="$HOME/smlss"
-
-# Add smlss scripts to $PATH
-export PATH="$SMLSS_DIR/scripts:$PATH"
-# Add .local to $PATH
-export PATH="$HOME/.local/bin:$PATH"
-# Add Rust executables to $PATH
-export PATH="$HOME/.cargo/bin:$PATH"
-# Add Go programs to $PATH
-export PATH="$GOBIN:$PATH"
+[ -f ~/.config/bash/env_vars ] && . ~/.config/bash/env_vars
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -70,7 +30,6 @@ fi
 	test -r "$XDG_CONFIG_HOME/dircolors" &&
 	eval "$(dircolors -b "$XDG_CONFIG_HOME/dircolors")" \
 || eval "$(dircolors -b)"
-
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
