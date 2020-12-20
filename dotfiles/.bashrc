@@ -42,8 +42,11 @@ export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 # Make pass data follow the XDG Base Directory specification.
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
 
+# Allow for smlss to possibly, eventually, follow the XDG Base Directory specification.
+export SMLSS_DIR="$HOME/smlss"
+
 # Add smlss scripts to $PATH
-export PATH="$HOME/smlss/scripts:$PATH"
+export PATH="$SMLSS_DIR/scripts:$PATH"
 # Add .local to $PATH
 export PATH="$HOME/.local/bin:$PATH"
 # Add Rust executables to $PATH
@@ -89,4 +92,3 @@ set -o vi
 
 # print on start of shell
 pwd
-
