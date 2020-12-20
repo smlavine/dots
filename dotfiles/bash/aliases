@@ -36,5 +36,3 @@ alias yay='yay --sudoloop' # prevents sudo timeout on long builds
 # Sums up numbers on each line in standard input
 alias count='paste -sd+ - | bc'
 
-# Records the webcam, with microphone audio. Give a file at the end for output
-alias record-webcam='ffmpeg -f v4l2 -video_size 640x480 -i /dev/video0 -f alsa -i default -c:v libx264 -preset ultrafast -c:a aac'
