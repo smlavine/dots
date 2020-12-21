@@ -32,6 +32,9 @@ export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 # Make pass data follow the XDG Base Directory specification.
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
 
+# Make bash-completion follow the XDG Base Directory specification.
+export BASH_COMPLETION_USER_FILE="$XDG_CONFIG_HOME/bash-completion/bash_completion"
+
 # Allow for smlss to possibly, eventually, follow the XDG Base Directory specification.
 export SMLSS_DIR="$HOME/smlss"
 
