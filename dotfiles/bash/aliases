@@ -37,6 +37,9 @@ alias gp='git push'
 alias gd='git diff'
 alias gl='git log'
 alias gsh='git show'
+alias gb='git branch'
+alias gk='git checkout'
+
 
 alias f='firefox'
 alias z='zathura'
