@@ -30,6 +30,13 @@ alias ed='ed -p:'
 
 alias r='ranger'
 
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gd='git diff'
+alias gsh='git show'
+
 alias f='firefox'
 alias z='zathura'
 
