@@ -30,6 +30,9 @@ alias ed='ed -p:'
 
 alias r='ranger'
 
+alias dba='cd ~/smlss; nvim dots/bash/aliases'
+alias dbe='cd ~/smlss; nvim dots/bash/env_vars'
+
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
