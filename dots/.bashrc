@@ -39,6 +39,9 @@ shopt -s checkwinsize
 # match all files and zero or more directories and subdirectories.
 shopt -s globstar
 
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe.sh ] && eval "$(SHELL=/bin/sh lesspipe.sh)"
+
 # remove files that store data when I don't want them to.
 [ -f ~/.calc_history ] && rm ~/.calc_history
 [ -f ~/.python_history ] && rm ~/.python_history
