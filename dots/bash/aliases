@@ -33,8 +33,8 @@ alias ed='ed -p:'
 
 alias r='ranger'
 
-alias dba="cd $SMLSS_DIR; nvim dots/bash/aliases"
-alias dbe="cd $SMLSS_DIR; nvim dots/bash/env_vars"
+alias dba="nvim $SMLSS_DIR/dots/bash/aliases"
+alias dbe="nvim $SMLSS_DIR/dots/bash/env_vars"
 
 alias cs="cd $SMLSS_DIR"
 
