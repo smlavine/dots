@@ -51,3 +51,4 @@ set -o vi
 
 # print on start of shell
 pwd
+l
