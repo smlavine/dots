@@ -8,11 +8,8 @@ case $- in
       *) return;;
 esac
 
-# load aliases
+# Source aliases file (which sources env_vars).
 [ -f ~/.config/bash/aliases ] && . ~/.config/bash/aliases
-
-# load environment variables
-[ -f ~/.config/bash/env_vars ] && . ~/.config/bash/env_vars
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

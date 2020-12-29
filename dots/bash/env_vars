@@ -39,7 +39,7 @@ export BASH_COMPLETION_USER_FILE="$XDG_CONFIG_HOME/bash_completion"
 export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
 
 # Allow for smlss to possibly, eventually, follow the XDG Base Directory specification.
-export SMLSS_DIR="$HOME/smlss"
+export SMLSS_DIR="$XDG_CONFIG_HOME/smlss"
 
 # Add smlss scripts to $PATH
 export PATH="$SMLSS_DIR/scripts:$PATH"
