@@ -36,6 +36,8 @@ alias r='ranger'
 alias dba="cd $SMLSS_DIR; nvim dots/bash/aliases"
 alias dbe="cd $SMLSS_DIR; nvim dots/bash/env_vars"
 
+alias cs="cd $SMLSS_DIR"
+
 alias ga='git add'
 alias gb='git branch'
 alias gc='git commit'
