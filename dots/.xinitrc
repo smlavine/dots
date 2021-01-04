@@ -1,13 +1,9 @@
 setxkbmap -option caps:swapescape
 
-get_key() {
-    if [ "$(setxkbmap -query | grep variant | awk '{print $2'})" = "intl" ]
-    then
-        key="INTL"
-    else
-        key="US"
-    fi
-
+keyinfo() {
+    [ "$(setxkbmap -query | grep variant | awk '{print $2'})" = "intl" ] &&
+		echo "INTL" ||
+			echo "US"
 }
 
 set_batinfo() {
@@ -39,12 +35,10 @@ set_batinfo() {
 	fi
 }
 
-get_key
 set_batinfo
 
-while xsetroot -name " $key $(vol) $(date "+%a %b %d %r %Z")$batinfo"
+while xsetroot -name " $(keyinfo) $(vol) $(date "+%a %b %d %r %Z")$batinfo"
 do
-    get_key
     set_batinfo
 	sleep 1
 done &
