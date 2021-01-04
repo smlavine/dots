@@ -14,7 +14,7 @@ set_batinfo() {
 		batinfo=""
 	else
 		# Battery percentage
-		batinfo=" $(acpi | awk '{print $4}' | tr -d ',')"
+		batinfo="$(acpi | awk '{print $4}' | tr -d ',')"
 		# Battery time remaining
 		batinfo="$batinfo $(acpi | awk '{print $5}' | sed 's/:/h/' | sed 's/:/m/' | cut -c -6)"
 		# Battery status
@@ -37,7 +37,7 @@ set_batinfo() {
 
 set_batinfo
 
-while xsetroot -name " $(keyinfo) $(vol) $(date "+%a %b %d %r %Z")$batinfo"
+while xsetroot -name " $(keyinfo) $(vol) $(date "+%a %b %d %r %Z") $batinfo"
 do
     set_batinfo
 	sleep 1
