@@ -29,6 +29,7 @@ alias dh="du -h | sort -h | grep -v '.*/.*/.*'"
 
 alias v='nvim'
 alias vi='nvim'
+alias vim='nvim'
 alias ed='ed -p:'
 
 alias r='ranger'
