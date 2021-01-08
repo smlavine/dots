@@ -1,7 +1,7 @@
 #!/bin/sh
 
 keyinfo() {
-	setxkbmap -query | grep -q 'variant: *intl' && echo 'INTL' || echo 'US'
+	setxkbmap -query | grep -q 'variant:    intl' && echo 'INTL' || echo 'US'
 }
 
 batinfo() {
