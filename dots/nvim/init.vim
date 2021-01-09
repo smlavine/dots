@@ -20,6 +20,20 @@ set backspace=indent,eol,start
 " }.
 set cinoptions+=:0
 
+" Aligns C function return type declarations like:
+" static void
+" usage()
+" {
+"   ...
+" }
+" instead of
+"     static void
+" usage()
+" {
+"   ...
+" }
+set cinoptions+=t0
+
 set iskeyword-=-
 
 if !isdirectory('/tmp/nvim')
