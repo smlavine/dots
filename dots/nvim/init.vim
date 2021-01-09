@@ -62,7 +62,8 @@ set shiftwidth=4
 " Disable .netrwhist being generated.
 let g:netrw_dirhistmax=0
 
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+" Disable automatic comment completion.
+"autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " I try to keep my max columns to 80 lines. This lets me know when I go over.
 highlight ColorColumn ctermbg=0
