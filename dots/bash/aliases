@@ -3,7 +3,11 @@
 # Source env_vars file.
 [ -f ~/.config/bash/env_vars ] && source ~/.config/bash/env_vars
 
+# Source personal aliases.
+[ -f "$SMLSS_PERSONAL_ALIASES" ] && source "$SMLSS_PERSONAL_ALIASES"
+
 # Alias definitions.
+
 
 alias ls='ls --color=auto'
 alias l='ls -CAF'
