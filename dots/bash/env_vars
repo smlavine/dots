@@ -54,10 +54,14 @@ export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
 # Make smlss follow the XDG Base Directory specification.
 export SMLSS_DIR="$XDG_CONFIG_HOME/smlss"
 
+# A directory to hold files that are accessed by smlss-adjacent processes or
+# aliases, or are otherwise used by the user of smlss.
+export SMLSS_DATA_DIR="$XDG_DATA_HOME/smlss"
+
 # A file that can hold aliases that are not part of the main smlss aliases
 # file. It is intended for aliases that are specific and need not be shared or
 # kept in version control.
-export SMLSS_PERSONAL_ALIASES="$XDG_DATA_HOME/smlss/my-aliases"
+export SMLSS_PERSONAL_ALIASES="$SMLSS_DATA_DIR/myaliases"
 
 # Add smlss scripts to $PATH
 export PATH="$SMLSS_DIR/scripts:$PATH"
