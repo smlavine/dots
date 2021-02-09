@@ -25,8 +25,9 @@ dateinfo() {
 
 setxkbmap -option caps:swapescape
 
-while xsetroot -name " $(keyinfo) $(vol) $(dateinfo) $(batinfo)"
+while true
 do
+	xsetroot -name " $(keyinfo) $(vol) $(dateinfo) $(batinfo)"
 	sleep 1
 done &
 
