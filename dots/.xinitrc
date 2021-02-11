@@ -1,5 +1,10 @@
 #!/bin/sh
 
+protoninfo() {
+	protonvpn status | grep -E 'Server|Load' | awk '{print $2}' | paste - - |
+		tr '\t' ':'
+}
+
 keyinfo() {
 	setxkbmap -query | grep -q 'variant:    intl' && echo 'INTL' || echo 'US'
 }
@@ -25,9 +30,24 @@ dateinfo() {
 
 setxkbmap -option caps:swapescape
 
+# The counter for reading protonvpn info. See the comment below.
+imax=15
+i="$imax"
+
 while true
 do
-	xsetroot -name " $(keyinfo) $(vol) $(dateinfo) $(batinfo)"
+	# protonvpn status takes an extra little bit of time to run, so we don't
+	# want to update protonvpn info every second. For this reason, it is read
+	# into a variable which is only updated every "$imax" iterations.
+	if [ "$i" -ge "$imax" ]; then
+		# We append a space here to be in between proton and keyinfo, if proton
+		# isn't empty.
+		proton="$(protoninfo)" && [ -n "$proton" ] && proton="$proton "
+		i=0
+	else
+		i="$(expr "$i" + 1)"
+	fi
+	xsetroot -name " $proton$(keyinfo) $(vol) $(dateinfo) $(batinfo)"
 	sleep 1
 done &
 
