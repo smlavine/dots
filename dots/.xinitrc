@@ -28,7 +28,7 @@ dateinfo() {
 	echo $(date '+%a %b %d %r %Z')
 }
 
-setxkbmap -option caps:swapescape
+setxkbmap -option caps:escape_shifted_capslock
 
 # The counter for reading protonvpn info. See the comment below.
 imax=15
