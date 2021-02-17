@@ -1,7 +1,11 @@
 #!/bin/sh
 
 protoninfo() {
-	protonvpn status | grep -E 'Server|Load' | awk '{print $2}' | paste - - |
+	status="$(protonvpn status)"
+	# If there is an error connecting to the VPN, then display '! !'; otherwise
+	# display the VPN information as normal.
+	echo "$status" | grep -o '!' ||
+		echo "$status" | grep -E 'Server|Load' | awk '{print $2}' | paste - - |
 		tr '\t' ':'
 }
 
