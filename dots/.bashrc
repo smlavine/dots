@@ -50,6 +50,7 @@ shopt -s direxpand
 # disable bash history
 unset HISTFILE
 
+# enable vi editing mode
 set -o vi
 
 # print on start of shell
