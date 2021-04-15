@@ -60,7 +60,6 @@ alias gsl='git shortlog'
 alias gsh='git show --format=fuller'
 alias gt='git tag'
 
-
 alias f='firefox'
 alias z='zathura'
 
