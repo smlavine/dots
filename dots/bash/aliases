@@ -69,3 +69,7 @@ alias yay='yay --sudoloop' # prevents sudo timeout on long builds
 alias count='paste -sd+ - | bc'
 
 alias sp='sudo protonvpn'
+
+# This is written as a function so that it can be invoked as 'rs on' and
+# 'rs off'. Regular aliases cannot have spaces in them.
+rs() { [ "$*" = on ] && redshift -PO 3500k || ([ "$*" = off ] && redshift -x) }
