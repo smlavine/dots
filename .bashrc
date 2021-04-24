@@ -47,6 +47,9 @@ shopt -s direxpand
 [ -f ~/.python_history ] && rm ~/.python_history
 [ -f ~/.recently-used ] && rm ~/.recently-used
 
+# enable autojump
+[ -s /etc/profile.d/autojump.sh ] && source /etc/profile.d/autojump.sh
+
 # disable bash history
 unset HISTFILE
 
