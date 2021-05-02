@@ -80,6 +80,7 @@ call SetupCommandAlias("W", "w")
 call SetupCommandAlias("Wq", "wq")
 call SetupCommandAlias("Q", "q")
 call SetupCommandAlias("wQ", "wq")
+call SetupCommandAlias("WQ", "wq")
 
 " Better window switching hotkeys.
 nnoremap <C-J> <C-W><C-J>
