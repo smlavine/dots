@@ -57,7 +57,7 @@ alias gre='git remote -v'
 alias grl='git reflog'
 alias gs='git status'
 alias gsl='git shortlog'
-alias gsh='git show --format=fuller'
+alias gsh='git show --format=fuller --show-signature'
 alias gt='git tag'
 
 alias f='firefox'
