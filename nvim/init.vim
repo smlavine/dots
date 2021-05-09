@@ -110,26 +110,3 @@ nnoremap + <C-W>=
 " Disable highlighting of searched terms.
 nnoremap <C-C> :noh<CR>
 
-" Capitalization bindings. Taken from vimwiki.
-if (&tildeop)
-    nmap gcw guw~l " capitalize word
-    nmap gcW guW~l " capitalize WORD
-    nmap gciw guiw~l " capitalize inner word
-    nmap gciW guiW~l " capitalize inner WORD
-    nmap gcis guis~l " capitalize inner sentence
-    nmap gc$ gu$~l " capitalize until EOL
-    nmap gcgc guu~l " capitalize whole line
-    nmap gcc guu~l " capitalize whole line
-    vmap gc gu~l " capitalize highlighted text
-else
-    nmap gcw guw~h
-    nmap gcW guW~h
-    nmap gciw guiw~h
-    nmap gciW guiW~h
-    nmap gcis guis~h
-    nmap gc$ gu$~h
-    nmap gcgc guu~h
-    nmap gcc guu~h
-    vmap gc gu~h
-endif
-
