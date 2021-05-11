@@ -62,8 +62,6 @@ augroup numbertoggle
 	autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
 
-nnoremap <F4> :set rnu!<CR>
-
 set splitbelow
 set splitright
 
@@ -91,8 +89,6 @@ fun! ToggleColumnWidth()
 	endif
 endfun
 
-nnoremap <C-B> :call ToggleColumnWidth()<CR>
-
 " This function makes it so invocations of the command :from will be
 " interpreted as :to. See the following block including "W", "Wq", etc.
 fun! SetupCommandAlias(from, to)
@@ -106,6 +102,10 @@ call SetupCommandAlias("Wq", "wq")
 call SetupCommandAlias("Q", "q")
 call SetupCommandAlias("wQ", "wq")
 call SetupCommandAlias("WQ", "wq")
+
+nnoremap <F4> :set rnu!<CR>
+
+nnoremap <C-B> :call ToggleColumnWidth()<CR>
 
 " Better window switching hotkeys.
 nnoremap <C-J> <C-W><C-J>
