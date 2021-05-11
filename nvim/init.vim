@@ -69,7 +69,8 @@ let g:netrw_dirhistmax=0
 highlight ColorColumn ctermbg=0
 let &colorcolumn=join(range(80,80),",")
 
-" From StackOverflow
+" This function makes it so invocations of the command :from will be
+" interpreted as :to. See the following block including "W", "Wq", etc.
 fun! SetupCommandAlias(from, to)
     exec 'cnoreabbrev <expr> '.a:from .' ((getcmdtype() is# ":" && getcmdline()
                 \ is# "'.a:from.'")' .'? ("'.a:to.'") : ("'.a:from.'"))'
