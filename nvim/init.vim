@@ -1,4 +1,16 @@
-" Much of this isn't original, taken from Vim Wiki or StackOverflow. Cheers!
+" _________ _       __________________            _________ _______ 
+" \__   __/( (    /|\__   __/\__   __/    |\     /|\__   __/(       )
+"    ) (   |  \  ( |   ) (      ) (       | )   ( |   ) (   | () () |
+"    | |   |   \ | |   | |      | |       | |   | |   | |   | || || |
+"    | |   | (\ \) |   | |      | |       ( (   ) )   | |   | |(_)| |
+"    | |   | | \   |   | |      | |        \ \_/ /    | |   | |   | |
+" ___) (___| )  \  |___) (___   | |    _    \   /  ___) (___| )   ( |
+" \_______/|/    )_)\_______/   )_(   (_)    \_/   \_______/|/     \|
+"
+" Copyright (c) 2017-2021 Sebastian LaVine <mail@smlavine.com>
+" Copyright (c) 2017-2021 StackOverflow Contributors <stackoverflow.com>
+" This file is licensed under the terms of CC BY-SA 4.0.
+"_______________________________________________________________________
 
 filetype plugin indent on
 
