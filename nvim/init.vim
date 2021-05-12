@@ -105,6 +105,8 @@ call SetupCommandAlias("WQ", "wq")
 
 nnoremap <F4> :set rnu!<CR>
 
+nnoremap <F3> :!pandoc % -o /tmp/example.pdf &<CR><CR>
+
 nnoremap <C-B> :call ToggleColumnWidth()<CR>
 
 " Better window switching hotkeys.
