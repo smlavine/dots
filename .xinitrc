@@ -1,6 +1,8 @@
 #!/bin/sh
 
 protoninfo() {
+	test "$NO_PROTONVPN_STATUSBAR" && exit
+
 	status="$(protonvpn status)"
 	# If there is an error connecting to the VPN, then display '! !'; otherwise
 	# display the VPN information as normal.
