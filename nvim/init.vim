@@ -89,6 +89,8 @@ fun! ToggleColumnWidth()
 	endif
 endfun
 
+au BufNewFile,BufRead *.md call ToggleColumnWidth()
+
 " This function makes it so invocations of the command :from will be
 " interpreted as :to. See the following block including "W", "Wq", etc.
 fun! SetupCommandAlias(from, to)
