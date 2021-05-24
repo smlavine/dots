@@ -4,11 +4,15 @@ protoninfo() {
 	test "$NO_PROTONVPN_STATUSBAR" && exit
 
 	status="$(protonvpn status)"
-	# If there is an error connecting to the VPN, then display '! !'; otherwise
-	# display the VPN information as normal.
-	echo "$status" | grep -o '!' ||
-		echo "$status" | grep -E 'Server|Load' | awk '{print $2}' | paste - - |
-		tr '\t' ':'
+	# If there is an error connecting to the VPN, then display some number of
+	# exclamation points in the status bar and display a warning notification.
+	# Otherwise, display the VPN information as normal.
+	if echo "$status" | grep -o '!'; then
+		dunstify -t 14500 -u 2 "$status"
+	else
+		echo "$status" | grep -E 'Server|Load' | awk '{print $2}' | \
+			paste - - | tr '\t' ':'
+	fi
 }
 
 keyinfo() {
@@ -56,5 +60,7 @@ do
 	xsetroot -name " $proton$(keyinfo) $(vol) $(dateinfo) $(batinfo)"
 	sleep 1
 done &
+
+dunst &
 
 exec dwm
