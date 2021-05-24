@@ -60,6 +60,6 @@ do
 	sleep 1
 done &
 
-dunst &
+dunst -font "monospace 11" &
 
 exec dwm
