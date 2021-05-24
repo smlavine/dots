@@ -1,8 +1,6 @@
 #!/bin/sh
 
 protoninfo() {
-	test "$NO_PROTONVPN_STATUSBAR" && exit
-
 	status="$(protonvpn status)"
 	# If there is an error connecting to the VPN, then display some number of
 	# exclamation points in the status bar and display a warning notification.
@@ -40,16 +38,17 @@ dateinfo() {
 
 setxkbmap -option caps:escape_shifted_capslock
 
-# The counter for reading protonvpn info. See the comment below.
+# `protonvpn status` takes an extra bit of time to run, so we don't want to
+# update protonvpn info every second. For this reason, it is read into a
+# variable which is only updated every "$imax" iterations.
 imax=15
 i="$imax"
 
 while true
 do
-	# protonvpn status takes an extra little bit of time to run, so we don't
-	# want to update protonvpn info every second. For this reason, it is read
-	# into a variable which is only updated every "$imax" iterations.
-	if [ "$i" -ge "$imax" ]; then
+	if [ "$NO_PROTONVPN_STATUSBAR" ]; then
+		proton="<> "
+	elif [ "$i" -ge "$imax" ]; then
 		# We append a space here to be in between proton and keyinfo, if proton
 		# isn't empty.
 		proton="$(protoninfo)" && [ -n "$proton" ] && proton="$proton "
