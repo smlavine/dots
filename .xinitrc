@@ -46,7 +46,19 @@ i="$imax"
 
 while true
 do
-	if [ "$NO_PROTONVPN_STATUSBAR" ]; then
+	if [ -f ~/.local/share/toggle-pvpn-status ]; then
+		rm ~/.local/share/toggle-pvpn-status
+		if [ "$NO_PVPN_STATUS" ]; then
+			NO_PVPN_STATUS=''
+			# Set i so that if VPN status info is re-enabled, we don't have to
+			# wait for i to reach imax as it starts counting again to see VPN
+			# status info and receive '!' notifications.
+			i="$imax"
+		else
+			NO_PVPN_STATUS=1
+		fi
+	fi
+	if [ "$NO_PVPN_STATUS" ]; then
 		proton="<> "
 	elif [ "$i" -ge "$imax" ]; then
 		# We append a space here to be in between proton and keyinfo, if proton
