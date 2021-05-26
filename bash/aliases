@@ -33,8 +33,6 @@ alias dh="du -h | sort -h | grep -v '.*/.*/.*'"
 
 alias v='nvim'
 
-alias r='ranger'
-
 alias dba="nvim $SMLSS_DIR/dots/bash/aliases"
 alias dbe="nvim $SMLSS_DIR/dots/bash/env_vars"
 
