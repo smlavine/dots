@@ -1,5 +1,12 @@
 #!/bin/sh
 
+pvpn_file="${PVPN_STATUS_FILE:-$HOME/.local/share/smlss/toggle-pvpn-status}"
+[ ! -d "$(dirname "$pvpn_file")" ] && mkdir -p "$(dirname "$pvpn_file")"
+
+get_last_pvpn_modify() {
+	stat "$pvpn_file" | grep ^Modify | cut -d' ' -f2-
+}
+
 protoninfo() {
 	status="$(protonvpn status)"
 	# If there is an error connecting to the VPN, then display some number of
@@ -44,21 +51,31 @@ setxkbmap -option caps:escape_shifted_capslock
 imax=15
 i="$imax"
 
+# To change whether or not to print ProtonVPN status information in the status
+# bar, users will touch this file. If it is detected that the file has been
+# modified (`touch`-ed) since the last time it was checked, then this value
+# will be toggled.
+touch "$pvpn_file"
+pvpn_last_modify="$(get_last_pvpn_modify)"
+pvpn_status=1
+
 while true
 do
-	if [ -f ~/.local/share/toggle-pvpn-status ]; then
-		rm ~/.local/share/toggle-pvpn-status
-		if [ "$NO_PVPN_STATUS" ]; then
-			NO_PVPN_STATUS=''
+	pvpn_new_modify="$(get_last_pvpn_modify)"
+	if [ "$pvpn_last_modify" != "$pvpn_new_modify" ]; then
+		pvpn_last_modify="$pvpn_new_modify"
+		if [ "$pvpn_status" ]; then
+			pvpn_status=''
+		else
 			# Set i so that if VPN status info is re-enabled, we don't have to
 			# wait for i to reach imax as it starts counting again to see VPN
 			# status info and receive '!' notifications.
 			i="$imax"
-		else
-			NO_PVPN_STATUS=1
+			pvpn_status=1
 		fi
 	fi
-	if [ "$NO_PVPN_STATUS" ]; then
+
+	if [ ! "$pvpn_status" ]; then
 		proton="<> "
 	elif [ "$i" -ge "$imax" ]; then
 		# We append a space here to be in between proton and keyinfo, if proton
