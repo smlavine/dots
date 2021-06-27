@@ -9,7 +9,7 @@ These are my dotfiles. They are deployed by
 Files in this repository over which I hold copyright, or files which I am
 legally able to license in this way are licensed under the terms of the MIT
 license. See
-[MIT.txt](https://git.smlavine.com/?p=smlss/dots;a=blob;f=MIT.txt;hb=HEAD) for
+[LICENSE](https://git.smlavine.com/?p=smlss/dots;a=blob;f=LICENSE;hb=HEAD) for
 details. For explicit exceptions to this, see below.
 
 
@@ -18,7 +18,9 @@ details. For explicit exceptions to this, see below.
 The file
 [bash\_completion](https://git.smlavine.com/?p=smlss/dots;a=blob;f=bash_completion;hb=HEAD)
 was originally written by [cykerway](https://github.com/cykerway), and is
-licensed under the GPLv3.
+licensed under the GPLv3. See
+[LICENSE.bash\_completion](https://git.smlavine.com/?p=smlss/dots;a=blob;f=LICENSE.bash_completion;hb=HEAD)
+for details.
 
 The files
 [nvim/ftdetect/gcode.vim](https://git.smlavine.com/?p=smlss/dots;a=blob;f=nvim/ftdetect/gcode.vim;hb=HEAD)
