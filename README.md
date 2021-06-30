@@ -40,4 +40,3 @@ StackOverflow. Therefore, it is licensed under the terms of
 Contact
 =======
 To contact me, Sebastian LaVine, send an email to <mail@smlavine.com>.
-
