@@ -3,6 +3,11 @@ dots
 These are my dotfiles. They are deployed by
 [smlss](https://git.smlavine.com/smlss).
 
+All dotfiles are located in the ```src/``` directory, organized as if
+they were in ```$HOME```.
+
+To install the dotfiles to their proper places, simply run ```make```.
+
 Copyright
 =========
 Files in this repository over which I hold copyright, or files which I am
