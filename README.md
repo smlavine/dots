@@ -10,6 +10,7 @@ To install the dotfiles to their proper places, simply run ```make``` or
 ```make install```.
 
 To uninstall the dotfiles, run ```make uninstall```.
+
 Copyright
 =========
 Files in this repository over which I hold copyright, or files which I
