@@ -6,8 +6,10 @@ These are my dotfiles. They are deployed by
 All dotfiles are located in the ```src/``` directory, organized as if
 they were in ```$HOME```.
 
-To install the dotfiles to their proper places, simply run ```make```.
+To install the dotfiles to their proper places, simply run ```make``` or
+```make install```.
 
+To uninstall the dotfiles, run ```make uninstall```.
 Copyright
 =========
 Files in this repository over which I hold copyright, or files which I
