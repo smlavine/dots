@@ -9,9 +9,9 @@ get_last_pvpn_modify() {
 
 protoninfo() {
 	status="$(protonvpn status)"
-	# If there is an error connecting to the VPN, then display some number of
-	# exclamation points in the status bar and display a warning notification.
-	# Otherwise, display the VPN information as normal.
+	# If there is an error connecting to the VPN, then display some number
+	# of exclamation points in the status bar and display a warning
+	# notification.  Otherwise, display the VPN information as normal.
 	if echo "$status" | grep -o '!'; then
 		dunstify -t 14500 -u 2 "$status"
 	else
@@ -71,9 +71,10 @@ do
 		if [ "$pvpn_status" ]; then
 			pvpn_status=''
 		else
-			# Set i so that if VPN status info is re-enabled, we don't have to
-			# wait for i to reach imax as it starts counting again to see VPN
-			# status info and receive '!' notifications.
+			# Set i so that if VPN status info is re-enabled, we
+			# don't have to wait for i to reach imax as it starts
+			# counting again to see VPN status info and receive '!'
+			# notifications.
 			i="$imax"
 			pvpn_status=1
 		fi
@@ -82,8 +83,8 @@ do
 	if [ ! "$pvpn_status" ]; then
 		proton="<> "
 	elif [ "$i" -ge "$imax" ]; then
-		# We append a space here to be in between proton and keyinfo, if proton
-		# isn't empty.
+		# We append a space here to be in between proton and keyinfo,
+		# if proton isn't empty.
 		proton="$(protoninfo)" && [ -n "$proton" ] && proton="$proton "
 		i=0
 	else
