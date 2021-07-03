@@ -76,7 +76,7 @@ do
 	if [ "$pvpn_last_modify" != "$pvpn_new_modify" ]; then
 		pvpn_last_modify="$pvpn_new_modify"
 		if [ "$pvpn_status" ]; then
-			pvpn_status=''
+			pvpn_status=
 		else
 			# Set i so that if VPN status info is re-enabled, we
 			# don't have to wait for i to reach imax as it starts
