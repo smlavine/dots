@@ -49,6 +49,13 @@ dateinfo() {
 
 setxkbmap -option caps:escape_shifted_capslock
 
+# This will probably be useful only on a Thinkpad X220 Tablet.
+# The touch screen will not respond to touch from a finger, but it will still
+# respond to the digitizer pen.
+# I did this because it is annoying that things are clicked and higlighted
+# when I am wiping dust off the screen.
+xinput disable 'Wacom ISDv4 E6 Finger'
+
 # `protonvpn status` takes an extra bit of time to run, so we don't want to
 # update protonvpn info every second. For this reason, it is read into a
 # variable which is only updated every "$imax" iterations.
