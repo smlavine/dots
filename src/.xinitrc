@@ -21,7 +21,11 @@ protoninfo() {
 }
 
 keyinfo() {
-	setxkbmap -query | grep -q 'variant:    intl' && echo 'INTL' || echo 'US'
+	if setxkbmap -query | grep -q 'variant:    intl'; then
+		echo 'INTL'
+	else
+		echo 'US'
+	fi
 }
 
 batinfo() {
