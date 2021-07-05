@@ -48,6 +48,8 @@ alias gp='git push'
 alias gpa='git remote | xargs -I x git push x'
 alias gpl='git pull'
 alias gr='git restore'
+alias gra="git status | grep '^[^a-z]*modified' | awk '{ print \$2 }' |
+	xargs git restore"
 alias gre='git remote -v'
 alias grl='git reflog'
 alias gs='git status'
