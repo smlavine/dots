@@ -120,6 +120,9 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap [[ [[zz
 nnoremap ]] ]]zz
 
+" Center window when viewing search results.
+nnoremap n nzz
+
 " Bind swap escape and "terminal escape" in a terminal window
 tnoremap <Esc> <C-\><C-N>
 tnoremap <C-\><C-N> <Esc>
