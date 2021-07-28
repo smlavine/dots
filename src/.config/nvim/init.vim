@@ -66,7 +66,7 @@ set splitbelow
 set splitright
 
 set autoindent
-set tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab
+set tabstop=8 shiftwidth=8 noexpandtab
 
 " Disable .netrwhist being generated.
 let g:netrw_dirhistmax=0
