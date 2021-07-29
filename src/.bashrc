@@ -43,9 +43,9 @@ shopt -s direxpand
 [ -x /usr/bin/lesspipe.sh ] && eval "$(SHELL=/bin/sh lesspipe.sh)"
 
 # remove files that store data when I don't want them to.
-[ -f ~/.calc_history ] && rm ~/.calc_history
-[ -f ~/.python_history ] && rm ~/.python_history
-[ -f ~/.recently-used ] && rm ~/.recently-used
+rm -f ~/.calc_history
+rm -f ~/.python_history
+rm -f ~/.recently-used
 
 # enable autojump
 [ -s /etc/profile.d/autojump.sh ] && source /etc/profile.d/autojump.sh
