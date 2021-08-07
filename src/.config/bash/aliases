@@ -31,11 +31,6 @@ alias dh="du -hd 1 | sort -h"
 
 alias v='nvim'
 
-alias dba="nvim $SMLSS_DIR/dots/bash/aliases"
-alias dbe="nvim $SMLSS_DIR/dots/bash/env_vars"
-
-alias cs="cd $SMLSS_DIR && pwd && git status && l"
-
 alias ga='git add'
 alias gb='git branch'
 alias gc='git commit'
