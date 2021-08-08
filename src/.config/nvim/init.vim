@@ -71,9 +71,6 @@ set tabstop=8 shiftwidth=8 noexpandtab
 " Disable .netrwhist being generated.
 let g:netrw_dirhistmax=0
 
-" Disable automatic comment completion.
-"autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
 " I try to keep my max columns to 80 lines. This lets me know when I go over.
 highlight ColorColumn ctermbg=0
 let &colorcolumn=join(range(80,80),",")
