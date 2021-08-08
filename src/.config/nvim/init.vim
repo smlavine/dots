@@ -86,6 +86,10 @@ fun! ToggleColumnWidth()
 endfun
 au BufNewFile,BufRead *.md call ToggleColumnWidth()
 
+" html and css should be indented with spaces.
+au BufNewFile,BufRead *.html setl shiftwidth=2 ts=2 softtabstop=2 expandtab
+au BufNewFile,BufRead *.css  setl shiftwidth=2 ts=2 softtabstop=2 expandtab
+
 " This function makes it so invocations of the command :from will be
 " interpreted as :to. See the following block including "W", "Wq", etc.
 fun! SetupCommandAlias(from, to)
