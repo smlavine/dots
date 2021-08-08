@@ -84,7 +84,6 @@ fun! ToggleColumnWidth()
 		let &colorcolumn=join(range(80,80),",")
 	endif
 endfun
-
 au BufNewFile,BufRead *.md call ToggleColumnWidth()
 
 " This function makes it so invocations of the command :from will be
