@@ -90,6 +90,9 @@ au BufNewFile,BufRead *.md call ToggleColumnWidth()
 au BufNewFile,BufRead *.html setl shiftwidth=2 ts=2 softtabstop=2 expandtab
 au BufNewFile,BufRead *.css  setl shiftwidth=2 ts=2 softtabstop=2 expandtab
 
+" python should also be indented with spaces.
+au BufNewFile,BufRead *.py setl shiftwidth=4 ts=4 softtabstop=4 expandtab
+
 " This function makes it so invocations of the command :from will be
 " interpreted as :to. See the following block including "W", "Wq", etc.
 fun! SetupCommandAlias(from, to)
