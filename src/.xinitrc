@@ -47,7 +47,7 @@ dateinfo() {
 	echo $(date '+%a %b %d %r %Z')
 }
 
-setxkbmap -option caps:escape_shifted_capslock
+setxkbmap -option caps:escape
 
 # This will probably be useful only on a Thinkpad X220 Tablet.
 # The touch screen will not respond to touch from a finger, but it will still
