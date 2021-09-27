@@ -45,6 +45,9 @@ export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 # Make pass data follow the XDG Base Directory specification.
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
 
+# See <https://git.sr.ht/~smlavine/scripts/tree/master/item/src/mypassmenu>.
+export MYPASSMENU_WEIGHTS="$XDG_DATA_HOME/mypassmenu.tsv"
+
 # Make bash-completion follow the XDG Base Directory specification.
 export BASH_COMPLETION_USER_FILE="$XDG_CONFIG_HOME/bash_completion"
 
