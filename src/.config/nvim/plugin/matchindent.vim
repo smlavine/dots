@@ -1,5 +1,5 @@
-" A Vim plugin which attempts to set tab preferences to match the file you're
-" editing.
+" A Vim plugin which attempts to set tab preferences to match the file
+" you're editing.
 " 
 " Last Change: 2012-04-27
 " Maintainer: http://github.com/conormcd
@@ -8,8 +8,8 @@
 highlight MatchIndentBadIndent ctermbg=red guibg=red
 autocmd BufNewFile,BufRead * call MatchIndent()
 function! MatchIndent()
-	" Zip through the first few lines and look for the three most common
-	" indenting schemes.
+	" Zip through the first few lines and look for the three most
+	" common indenting schemes.
 	let n = 1
 	let nmax = 500
 	let with_tabs = 0
@@ -45,8 +45,8 @@ function! MatchIndent()
 			let use_2_spaces = 1
 			let warn_tabs = 1
 		else
-			" We don't make any changes to the user's specified default in
-			" their vimrc
+			" We don't make any changes to the user's
+			" specified default in their vimrc
 		endif
 	elseif with_tabs == 0 && with_2_spaces == 0 && with_4_spaces > 0
 		" Clear case of a 4 space indent
@@ -58,10 +58,11 @@ function! MatchIndent()
 		let use_2_spaces = 1
 		let warn_tabs = 1
 	elseif with_tabs == 0 && with_2_spaces > 0 && with_4_spaces > 0
-		" Mix of 2 and 4 space indents, we assume a 2 space indent since 4
-		" space indents happen in 2 space indent files. It's not perfect, but
-		" hey...
-		" Only use 4 if theres 4 times as many lines with 4 spaces.
+		" Mix of 2 and 4 space indents, we assume a 2 space
+		" indent since 4 space indents happen in 2 space indent
+		" files. It's not perfect, but hey...
+		" Only use 4 if theres 4 times as many lines with 4
+		" spaces.
 		if with_2_spaces * 4 > with_4_spaces
 			let use_2_spaces = 1
 		else
