@@ -83,3 +83,5 @@ export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
 # Fix broken Java GUIs
 # https://wiki.archlinux.org/title/Java#Gray_window,_applications_not_resizing_with_WM,_menus_immediately_closing
 export _JAVA_AWT_WM_NONREPARENTING=1
+
+export TZDIR="/usr/share/zoneinfo"
