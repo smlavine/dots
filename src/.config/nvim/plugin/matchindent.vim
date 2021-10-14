@@ -102,7 +102,10 @@ function! MatchIndent()
 		" Modified by Sebastian LaVine <mail@smlavine.com>,
 		" 2021-10-12. See <https://git.sr.ht/~smlavine/dots>.
 		" I use 8-space-long tabs.
-		set softtabstop=8 tabstop=8 shiftwidth=8 noexpandtab
+		set noexpandtab
+		set shiftwidth=8
+		set softtabstop=8
+		set tabstop=8
 		"set noexpandtab
 		"set shiftwidth=4
 		"set softtabstop=4
