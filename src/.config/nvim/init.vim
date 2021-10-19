@@ -73,6 +73,10 @@ set shiftwidth=8
 set softtabstop=8
 set tabstop=8
 
+" Highlight parens without making it difficult to see what the characters
+" being highlighted are.
+hi MatchParen ctermbg=cyan ctermfg=black cterm=bold
+
 " Disable .netrwhist being generated.
 let g:netrw_dirhistmax=0
 
