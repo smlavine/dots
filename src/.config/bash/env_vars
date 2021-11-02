@@ -69,6 +69,9 @@ export SMLSS_DATA_DIR="$XDG_DATA_HOME/smlss"
 # kept in version control.
 export SMLSS_PERSONAL_ALIASES="$SMLSS_DATA_DIR/myaliases"
 
+# This is where I store my screenshots.
+export SCREENSHOT_DIR="$HOME/Documents/pictures/screenshots/"
+
 # Add smlss scripts to $PATH
 export PATH="$SMLSS_DIR/scripts:$PATH"
 # Add .local to $PATH
