@@ -71,7 +71,7 @@ pvpn_last_modify="$(get_last_pvpn_modify)"
 pvpn_status=1
 
 # If Wi-Fi is present but disabled, don't print ProtonVPN status information.
-ip link | grep wlp | grep -q UP || pvpn_status=
+ip link | grep wlp | grep -q 'state DOWN' && pvpn_status=
 
 while true
 do
