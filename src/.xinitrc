@@ -8,7 +8,9 @@ get_last_pvpn_modify() {
 }
 
 protoninfo() {
-	status="$(protonvpn status)"
+	# Timeout after 15 seconds, to prevent the statusbar being
+	# frozen if a connection cannot be made.
+	status="$(timeout 15 protonvpn status)"
 	# If there is an error connecting to the VPN, then display some number
 	# of exclamation points in the status bar and display a warning
 	# notification.  Otherwise, display the VPN information as normal.
