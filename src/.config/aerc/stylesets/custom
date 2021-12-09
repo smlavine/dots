@@ -28,7 +28,7 @@ msglist_deleted.fg=gray
 completion_pill.reverse=true
 
 tab.reverse=false
-border.reverse=true
+border.reverse=false
 
 selector_focused.reverse=true
 selector_chooser.bold=true
