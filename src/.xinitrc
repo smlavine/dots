@@ -100,7 +100,7 @@ do
 		proton="$(protoninfo)" && [ -n "$proton" ] && proton="$proton "
 		i=0
 	else
-		i="$(expr "$i" + 1)"
+		i="$(( i + 1 ))"
 	fi
 	xsetroot -name " $proton$(keyinfo) $(vol) $(dateinfo) $(batinfo)"
 	sleep 1
