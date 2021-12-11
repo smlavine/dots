@@ -46,7 +46,7 @@ batinfo() {
 }
 
 dateinfo() {
-	echo $(date '+%a %b %d %r %Z')
+	date '+%a %b %d %r %Z'
 }
 
 setxkbmap -option caps:escape
