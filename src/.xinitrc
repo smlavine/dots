@@ -37,7 +37,8 @@ batinfo() {
 			# Do not end print statements with a newline
 			ORS = ""
 
-			# Remove the comma from the end of the percentage.
+			# Remove the comma from the end of the percentage,
+			# if it is present.
 			sub(",", "", $4);
 
 			# Replace the first colon with an hour label.
