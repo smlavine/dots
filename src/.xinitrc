@@ -32,17 +32,33 @@ keyinfo() {
 
 # Print battery percentage, time remaining to full/dead, and status
 batinfo() {
-	acpi 2>&1 | grep -q 'No support for device type' ||
-		echo -n "$( acpi |
-			awk '{print $4 $5}' |
-			sed 's/:[0-9]*$/m/;s/:/h/' |
-			tr ',' ' ') " &&
-		case "$(acpi | awk '{print $3}')" in
-			Charging,)    echo CHR ;;
-			Discharging,) echo DRN ;;
-			Full,)        echo FULL ;;
-			*)            echo ? ;;
-		esac
+	if acpi 2>&1 | grep -qv 'No support for device type'; then
+		acpi | awk '{
+			# Do not end print statements with a newline
+			ORS = ""
+
+			# Remove the comma from the end of the percentage.
+			sub(",", "", $4);
+
+			# Replace the first colon with an hour label.
+			# Replace the second colon with a minute label,
+			# and also get rid of the seconds field.
+			sub(":", "h", $5);
+			sub(/:.*$/, "m", $5);
+
+			print $4 " " $5 " ";
+
+			if ($3 == "Charging,") {
+				print "CHR"
+			} else if ($3 == "Discharging,") {
+				print "DRN"
+			} else if ($3 == "Full,") {
+				print "FULL"
+			} else {
+				print "?"
+			}
+		}'
+	fi
 }
 
 dateinfo() {
