@@ -30,8 +30,8 @@ keyinfo() {
 	fi
 }
 
+# Print battery percentage, time remaining to full/dead, and status
 batinfo() {
-	# Print battery percentage, time remaining to full/dead, and status
 	acpi 2>&1 | grep -q 'No support for device type' ||
 		echo -n "$( acpi |
 			awk '{print $4 $5}' |
