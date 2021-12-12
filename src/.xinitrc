@@ -47,7 +47,9 @@ batinfo() {
 			sub(":", "h", $5);
 			sub(/:.*$/, "m", $5);
 
-			print $4 " " $5 " ";
+			print $4 " ";
+			if (length($5) > 0)
+				print $5 " ";
 
 			if ($3 == "Charging,") {
 				print "CHR"
