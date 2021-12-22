@@ -89,8 +89,10 @@ let &colorcolumn=join(range(80,80),",")
 fun! ToggleColumnWidth()
 	if (&colorcolumn == 80)
 		let &colorcolumn=join(range(73, 80),",")
+		set textwidth=72
 	else
 		let &colorcolumn=join(range(80,80),",")
+		set textwidth=0
 	endif
 endfun
 au BufNewFile,BufRead *.md call ToggleColumnWidth()
