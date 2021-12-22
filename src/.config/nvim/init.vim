@@ -105,8 +105,8 @@ au BufNewFile,BufRead *.py setl shiftwidth=4 ts=4 softtabstop=4 expandtab
 " This function makes it so invocations of the command :from will be
 " interpreted as :to. See the following block including "W", "Wq", etc.
 fun! SetupCommandAlias(from, to)
-    exec 'cnoreabbrev <expr> '.a:from .' ((getcmdtype() is# ":" && getcmdline()
-                \ is# "'.a:from.'")' .'? ("'.a:to.'") : ("'.a:from.'"))'
+	exec 'cnoreabbrev <expr> '.a:from .' ((getcmdtype() is# ":" && getcmdline()
+				\ is# "'.a:from.'")' .'? ("'.a:to.'") : ("'.a:from.'"))'
 endfun
 
 " I often misspell these. Just fix 'em.
