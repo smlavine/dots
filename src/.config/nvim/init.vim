@@ -81,7 +81,7 @@ hi MatchParen ctermbg=cyan ctermfg=black cterm=bold
 let g:netrw_dirhistmax=0
 
 " I try to keep my max columns to 80 lines. This lets me know when I go over.
-highlight ColorColumn ctermbg=0
+highlight ColorColumn ctermbg=black
 let &colorcolumn=join(range(80,80),",")
 
 " When writing Markdown, I prefer to use a 72 column max length. This allows
