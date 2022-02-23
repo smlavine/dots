@@ -49,6 +49,11 @@ rm -f ~/.recently-used
 
 # enable autojump
 [ -s /etc/profile.d/autojump.sh ] && source /etc/profile.d/autojump.sh
+# but disable jo function; I don't use it and it conflicts with the jo
+# utility [0][1].
+# [0]: https://github.com/jpmens/jo
+# [1]: https://aur.archlinux.org/packages/jo
+unset jo
 
 # disable bash history
 unset HISTFILE
