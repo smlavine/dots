@@ -62,3 +62,19 @@ alias count='paste -sd+ - | bc'
 
 alias sp='sudo protonvpn'
 
+# Ascend the directory hierarchy until in a directory with .git/ in it.
+# If ascended all the way to the root directory, return to the original
+# location and print a failure message.
+gitroot()
+{
+	start="$(pwd)"
+
+	while ! [ -d .git ]; do
+		cd ..
+		if [ "$(pwd)" = '/' ]; then
+			cd "$start"
+			echo 'gitroot: failure: ascended to /' >&2
+			break
+		fi
+	done
+}
