@@ -88,3 +88,10 @@ export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 export TZDIR="/usr/share/zoneinfo"
+
+# Thanks to june for the hot tip <https://text.causal.agency/013-hot-tips.txt>:
+#    "This is useful if you sometimes type, for example, ‘cd src/bin’
+#     wanting to go to ~/src/bin but you aren't in ~.  If the path
+#     doesn't exist in the current directory, cd will try it in ~ as
+#     well."
+CDPATH=:~
