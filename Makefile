@@ -25,9 +25,9 @@ uninstall:
 	find src -mindepth 1 -type f | \
 		awk -v home="$(HOME)" \
 		'{ sub("^src",""); print "rm -v " home $$0 }' | sh
-	# Directories are reverse sorted so that parent directories are emptied
-	# before removed.
-	find src -mindepth 2 -type d | sort -r | sed 's/^src//' | \
+	# Child directories echo first (-depth) so that parent directories are
+	# emptied before removed.
+	find src -mindepth 2 -type d -depth | sed 's/^src//' | \
 		awk -v home="$(HOME)" '{ print home $$0 }' | \
 		xargs rmdir -v
 
