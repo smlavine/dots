@@ -16,4 +16,4 @@
 	smtpServerPort = 587
 	confirm = auto
 [pull]
-	rebase = false
+	rebase = true
