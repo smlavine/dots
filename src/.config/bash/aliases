@@ -78,3 +78,21 @@ gitroot()
 		fi
 	done
 }
+
+# Descend the directory hierarchy as long as there is one and only one
+# directory in each directory entered.
+descend()
+{
+	if [ "$1" ]; then
+		cd "$1"
+	fi
+
+	while :; do
+		directories="$(find . ! -name . -prune -type d)"
+		if [ "$(echo "$directories" | wc -l)" -eq 1 ]; then
+			cd "$(printf '%s' "$directories")"
+		else
+			break
+		fi
+	done
+}
