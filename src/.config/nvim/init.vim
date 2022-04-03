@@ -155,3 +155,5 @@ nnoremap + <C-W>=
 " Disable highlighting of searched terms.
 nnoremap <C-C> :noh<CR>
 
+" Disable bad indentation highlighting
+nnoremap <F12> :match MatchIndentBadIndent //<CR>
