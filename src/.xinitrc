@@ -15,7 +15,11 @@ protoninfo() {
 	# of exclamation points in the status bar and display a warning
 	# notification.  Otherwise, display the VPN information as normal.
 	if echo "$status" | grep -o '!'; then
-		dunstify -t 14500 -u 2 "$status"
+		# Only show notification if the hardware kill switch isn't
+		# flipped. In that case, the notification is just annoying.
+		if ! nmcli radio | cut -d' ' -f1 | grep -q disabled; then
+			dunstify -t 14500 -u 2 "$status"
+		fi
 	else
 		echo "$status" | grep -E 'Server|Load' | awk '{print $2}' | \
 			paste - - | tr '\t' ':'
