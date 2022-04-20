@@ -144,6 +144,9 @@ tnoremap <C-\><C-N> <Esc>
 " Indetation fix rebind
 nnoremap <C-I> ==
 vnoremap <C-I> ==
+" Cludge for 0.7 release that broke <C-I> binding in st terminal.
+nnoremap <Tab> ==
+vnoremap <Tab> ==
 
 " Better window resizing hotkeys
 nnoremap - :res -1<CR>
