@@ -20,6 +20,9 @@ set wildmenu
 " Makes backspace 'normal'
 set backspace=indent,eol,start
 
+" Set leader key to space
+let mapleader = " "
+
 " Aligns C cases like:
 " switch (x) {
 " case 'a':
