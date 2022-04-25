@@ -163,3 +163,6 @@ nnoremap <C-C> :noh<CR>
 
 " Disable bad indentation highlighting
 nnoremap <F12> :match MatchIndentBadIndent //<CR>
+
+" Add make binding.
+nnoremap <leader>m :make<CR>
