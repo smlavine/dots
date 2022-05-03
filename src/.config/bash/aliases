@@ -32,6 +32,8 @@ alias dh="du -hd 1 | sort -h"
 alias v='nvim'
 
 alias ga='git add'
+alias gam="git status | grep '^[^a-z]*modified' | awk '{ print \$2 }' |
+	xargs git add"
 alias gb='git branch'
 alias gc='git commit'
 alias gd='git diff'
