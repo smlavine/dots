@@ -166,3 +166,6 @@ nnoremap <F12> :match MatchIndentBadIndent //<CR>
 
 " Add make binding.
 nnoremap <leader>m :make<CR>
+
+" If there is a local (project-specific) vim file, use it
+silent! so .vimlocal
