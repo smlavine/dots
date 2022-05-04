@@ -35,7 +35,7 @@ alias ga='git add'
 alias gam="git status | grep '^[^a-z]*modified' | awk '{ print \$2 }' |
 	xargs git add"
 alias gb='git branch'
-alias gc='git commit'
+alias gc='git commit -ve'
 alias gd='git diff'
 alias gk='git checkout'
 alias gl='git log'
