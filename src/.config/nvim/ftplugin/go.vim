@@ -7,4 +7,4 @@ nnoremap <leader>e :GoRun .<space>
 
 nnoremap <leader>j :cnext<CR>
 nnoremap <leader>k :cprevious<CR>
-nnoremap <leader>p :cclose<CR>
+nnoremap <leader><space> :cclose<CR>
