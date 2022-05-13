@@ -22,4 +22,9 @@ setlocal commentstring=//\ %s
 setlocal fo-=t fo+=croql
 
 compiler hare
-" vim: tabstop=2 shiftwidth=2 expandtab
+
+" The following of this file was written by Sebastian LaVine.
+
+nnoremap <leader>b :!hare build<CR>
+nnoremap <leader>r :!hare run<CR>
+nnoremap <leader>e :!hare run .<space>
