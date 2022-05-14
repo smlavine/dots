@@ -27,12 +27,13 @@ setlocal cinoptions=L0,:0,(s,m1,ks,j1,J1,*0,#1
 " 0{     -> { at beginning of line
 " 0}     -> } at beginning of line
 " 0)     -> ) at beginning of line
+" 0]     -> ] at beginning of line
 " !^F    -> <C-f> (not inserted)
 " o      -> <CR> or `o` command
 " O      -> `O` command
 " e      -> else
 " 0=case -> case
-setlocal indentkeys=0{,0},0),!^F,o,O,e,0=case
+setlocal indentkeys=0{,0},0),0],!^F,o,O,e,0=case
 
 setlocal cinwords=if,else,for,switch,match
 

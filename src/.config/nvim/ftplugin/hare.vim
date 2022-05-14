@@ -23,8 +23,9 @@ setlocal fo-=t fo+=croql
 
 compiler hare
 
-" The following of this file was written by Sebastian LaVine.
-
+" These leader bindings were added by Sebastian LaVine.
 nnoremap <leader>b :!hare build<CR>
 nnoremap <leader>r :!hare run<CR>
 nnoremap <leader>e :!hare run .<space>
+
+" vim: tabstop=2 shiftwidth=2 expandtab

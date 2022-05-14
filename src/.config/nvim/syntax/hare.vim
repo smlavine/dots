@@ -78,4 +78,5 @@ hi def link hareType Type
 hi def link hareSpaceError Error
 autocmd InsertEnter * hi link hareSpaceError NONE
 autocmd InsertLeave * hi link hareSpaceError Error
+
 " vim: tabstop=8 shiftwidth=2 expandtab
