@@ -13,7 +13,6 @@ endif
 setlocal cindent
 
 " L0 -> don't deindent labels
-" :0 -> don't indent cases
 " (s -> use one indent after a trailing (
 " m1 -> if ) starts a line, indent it the same as its matching (
 " ks -> add an extra indent to extra lines in an if expression or for expression
@@ -21,7 +20,7 @@ setlocal cindent
 " J1 -> see j1
 " *0 -> don't search for unclosed block comments
 " #1 -> don't deindent lines that begin with #
-setlocal cinoptions=L0,:0,(s,m1,ks,j1,J1,*0,#1
+setlocal cinoptions=L0,(s,m1,ks,j1,J1,*0,#1
 
 " Controls which keys reindent the current line.
 " 0{     -> { at beginning of line
