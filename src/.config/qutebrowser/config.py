@@ -1,3 +1,5 @@
+config.load_autoconfig(False)
+
 # Make tab-switching bindings make more sense to me: j=left, k=right
 config.unbind('K', mode='normal')
 config.unbind('J', mode='normal')
