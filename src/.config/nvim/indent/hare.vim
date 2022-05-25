@@ -80,6 +80,11 @@ function! GetHareIndent()
       return indent(prevlnum)
     end
 
+    " If the previous line was a multiline case, deindent by one shiftwidth.
+    if prevline =~# '\v\=\>\s*(//.*)?$'
+      return indent(prevlnum) - shiftwidth()
+    endif
+
     " If the previous line started a block, deindent by one shiftwidth.
     " This handles the first case in a switch/match block.
     if prevline =~# '\v\{\s*(//.*)?$'
@@ -117,8 +122,16 @@ function! GetHareIndent()
     return indent(prevlnum)
   endif
 
+  let l:indent = FloorCindent(v:lnum)
+
+  " If the previous line was a case and a normal cindent wouldn't indent, indent
+  " an extra shiftwidth.
+  if prevline =~# '\v\=\>\s*(//.*)?$' && l:indent == indent(prevlnum)
+    return l:indent + shiftwidth()
+  endif
+
   " If everything above is false, do a normal cindent.
-  return FloorCindent(v:lnum)
+  return l:indent
 endfunction
 
 " vim: tabstop=2 shiftwidth=2 expandtab
