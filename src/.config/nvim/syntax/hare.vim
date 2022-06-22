@@ -13,8 +13,8 @@ syn keyword hareLabel case
 syn keyword hareBuiltin len offset free alloc assert append abort delete insert
 syn keyword hareBuiltin vastart vaarg vaend
 syn keyword hareOperator is as
-syn match hareType "\vsize((\_\s|//.*)*\()@!"
-syn match hareBuiltin "\vsize((\_\s|//.*)*\()@="
+syn match hareType "\v<size>((\_\s|//.*)*\()@!"
+syn match hareBuiltin "\v<size>((\_\s|//.*)*\()@="
 syn match harePreProc "^use .*;"
 syn match harePreProc "@[a-z]*"
 syn match hareOperator "\.\.\." "\.\."
