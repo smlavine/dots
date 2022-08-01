@@ -19,6 +19,14 @@
       </startupnotify>
     </action>
   </item>
+  <item label="Twitch">
+    <action name="Execute">
+      <command>streamlink-twitch-gui</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
 </menu>
 
 <menu id="apps-office-menu" label="LibreOffice">
