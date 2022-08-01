@@ -110,6 +110,14 @@
       </startupnotify>
     </action>
   </item>
+  <item label="mypassmenu">
+    <action name="Execute">
+      <command>mypassmenu</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
   <menu id="apps-utilities-menu"/>
   <menu id="apps-office-menu"/>
   <separator />
