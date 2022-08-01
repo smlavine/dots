@@ -2,6 +2,25 @@
 
 <openbox_menu xmlns="http://openbox.org/3.4/menu">
 
+<menu id="apps-utilities-menu" label="Utilities">
+  <item label="qalculate">
+    <action name="Execute">
+      <command>qalculate-gtk</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="thunar">
+    <action name="Execute">
+      <command>thunar</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+</menu>
+
 <menu id="apps-office-menu" label="LibreOffice">
   <item label="Writer">
     <action name="Execute">
@@ -59,25 +78,17 @@
 
 <menu id="root-menu" label="Openbox 3">
   <separator label="Applications" />
-  <item label="qalculate">
-    <action name="Execute">
-      <command>qalculate-gtk</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
-  <item label="thunar">
-    <action name="Execute">
-      <command>thunar</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
   <item label="firefox">
     <action name="Execute">
       <command>firefox</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="tf2">
+    <action name="Execute">
+      <command>tf2</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
@@ -99,14 +110,7 @@
       </startupnotify>
     </action>
   </item>
-  <item label="tf2">
-    <action name="Execute">
-      <command>tf2</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
+  <menu id="apps-utilities-menu"/>
   <menu id="apps-office-menu"/>
   <separator />
   <menu id="system-menu"/>
