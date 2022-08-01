@@ -2,40 +2,30 @@
 
 <openbox_menu xmlns="http://openbox.org/3.4/menu">
 
-<menu id="apps-office-menu" label="Office">
-  <item label="OpenOffice Base">
+<menu id="apps-office-menu" label="LibreOffice">
+  <item label="Writer">
     <action name="Execute">
-      <command>ooffice -base</command>
+      <command>libreoffice --writer</command>
     </action>
   </item>
-  <item label="OpenOffice Calc">
+  <item label="Calc">
     <action name="Execute">
-      <command>ooffice -calc</command>
+      <command>libreoffice --calc</command>
     </action>
   </item>
-  <item label="OpenOffice Draw">
+  <item label="Impress">
     <action name="Execute">
-      <command>ooffice -draw</command>
+      <command>libreoffice --impress</command>
     </action>
   </item>
-  <item label="OpenOffice Impress">
+  <item label="Draw">
     <action name="Execute">
-      <command>ooffice -impress</command>
+      <command>libreoffice --draw</command>
     </action>
   </item>
-  <item label="OpenOffice Math">
+  <item label="LibreOffice">
     <action name="Execute">
-      <command>ooffice -math</command>
-    </action>
-  </item>
-  <item label="OpenOffice Printer Administration">
-    <action name="Execute">
-      <command>ooffice-printeradmin</command>
-    </action>
-  </item>
-  <item label="OpenOffice Writer">
-    <action name="Execute">
-      <command>ooffice -writer</command>
+      <command>libreoffice</command>
     </action>
   </item>
 </menu>
