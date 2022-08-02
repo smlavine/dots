@@ -133,5 +133,7 @@ dunst -font "monospace 11" &
 
 xsetroot -bitmap /usr/include/X11/bitmaps/xlogo32 -bg rgb:14/13/7E -fg rgb:2A/89/F5
 
+tint2 &
+
 #exec dwm
 exec openbox
