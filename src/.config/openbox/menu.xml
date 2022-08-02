@@ -67,15 +67,6 @@
   <item label="Reload">
     <action name="Reconfigure" />
   </item>
-  <item label="Manage Printers">
-    <action name="Execute">
-      <command>xdg-open http://localhost:631/</command>
-      <startupnotify>
-        <enabled>no</enabled>
-        <icon>cups</icon>
-      </startupnotify>
-    </action>
-  </item>
   <separator />
   <item label="Log Out">
     <action name="Exit">
