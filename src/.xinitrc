@@ -98,42 +98,44 @@ pvpn_status=1
 # If Wi-Fi is present but disabled, don't print ProtonVPN status information.
 ip link | grep wlp | grep -q 'state DOWN' && pvpn_status=
 
-#while true
-#do
-#	pvpn_new_modify="$(get_last_pvpn_modify)"
-#	if [ "$pvpn_last_modify" != "$pvpn_new_modify" ]; then
-#		pvpn_last_modify="$pvpn_new_modify"
-#		if [ "$pvpn_status" ]; then
-#			pvpn_status=
-#		else
-#			# Set i so that if VPN status info is re-enabled, we
-#			# don't have to wait for i to reach imax as it starts
-#			# counting again to see VPN status info and receive '!'
-#			# notifications.
-#			i="$imax"
-#			pvpn_status=1
-#		fi
-#	fi
-#
-#	if [ ! "$pvpn_status" ]; then
-#		proton="<> "
-#	elif [ "$i" -ge "$imax" ]; then
-#		# We append a space here to be in between proton and keyinfo,
-#		# if proton isn't empty.
-#		proton="$(protoninfo)" && [ -n "$proton" ] && proton="$proton "
-#		i=0
-#	else
-#		i="$(( i + 1 ))"
-#	fi
-#	xsetroot -name " $proton$(keyinfo) $(vol) $(dateinfo) $(batinfo)"
-#	sleep 1
-#done &
+if [ ! "$WM" ]; then
+	WM="openbox"
+fi
+if [ "$WM" = "dwm" ]; then
+	while true
+	do
+		pvpn_new_modify="$(get_last_pvpn_modify)"
+		if [ "$pvpn_last_modify" != "$pvpn_new_modify" ]; then
+			pvpn_last_modify="$pvpn_new_modify"
+			if [ "$pvpn_status" ]; then
+				pvpn_status=
+			else
+				# Set i so that if VPN status info is re-enabled, we
+				# don't have to wait for i to reach imax as it starts
+				# counting again to see VPN status info and receive '!'
+				# notifications.
+				i="$imax"
+				pvpn_status=1
+			fi
+		fi
 
-dunst -font "monospace 11" &
+		if [ ! "$pvpn_status" ]; then
+			proton="<> "
+		elif [ "$i" -ge "$imax" ]; then
+			# We append a space here to be in between proton and keyinfo,
+			# if proton isn't empty.
+			proton="$(protoninfo)" && [ -n "$proton" ] && proton="$proton "
+			i=0
+		else
+			i="$(( i + 1 ))"
+		fi
+		xsetroot -name " $proton$(keyinfo) $(vol) $(dateinfo) $(batinfo)"
+		sleep 1
+	done &
+else
+	tint2 &
+fi
 
 xsetroot -bitmap /usr/include/X11/bitmaps/xlogo32 -bg rgb:14/13/7E -fg rgb:2A/89/F5
 
-tint2 &
-
-#exec dwm
-exec openbox
+exec "$WM"
