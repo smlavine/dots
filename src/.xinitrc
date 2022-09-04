@@ -99,7 +99,7 @@ pvpn_status=1
 ip link | grep wlp | grep -q 'state DOWN' && pvpn_status=
 
 if [ ! "$WM" ]; then
-	WM="openbox"
+	WM="dwm"
 fi
 if [ "$WM" = "dwm" ]; then
 	while true
@@ -132,7 +132,7 @@ if [ "$WM" = "dwm" ]; then
 		xsetroot -name " $proton$(keyinfo) $(vol) $(dateinfo) $(batinfo)"
 		sleep 1
 	done &
-else
+else  # openbox
 	tint2 &
 fi
 
