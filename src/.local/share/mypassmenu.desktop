@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=mypassmenu
+
+GenericName=mypassmenu
+Comment=Launches my graphical password manager
+
+Type=Application
+Exec=mypassmenu
