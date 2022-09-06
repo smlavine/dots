@@ -138,4 +138,9 @@ fi
 
 xsetroot -bitmap /usr/include/X11/bitmaps/xlogo32 -bg rgb:14/13/7E -fg rgb:2A/89/F5
 
+# Limit my desktop monitor to 2048x1152 -- text looks too small on 2560x1440
+if xrandr | grep -q 'HDMI-0 connected'; then
+	xrandr --output HDMI-0 --mode 2048x1152
+fi
+
 exec "$WM"
