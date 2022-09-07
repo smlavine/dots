@@ -1,1 +1,1 @@
-au BufRead,BufNewFile *.ha set filetype=hare
+au BufNewFile,BufRead *.ha setf hare
