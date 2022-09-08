@@ -102,8 +102,7 @@ if [ ! "$WM" ]; then
 	WM="dwm"
 fi
 if [ "$WM" = "dwm" ]; then
-	while true
-	do
+	while :; do
 		pvpn_new_modify="$(get_last_pvpn_modify)"
 		if [ "$pvpn_last_modify" != "$pvpn_new_modify" ]; then
 			pvpn_last_modify="$pvpn_new_modify"
