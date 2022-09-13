@@ -142,4 +142,6 @@ if xrandr | grep -q 'HDMI-0 connected'; then
 	xrandr --output HDMI-0 --mode 2048x1152
 fi
 
+dunst &
+
 exec "$WM"
