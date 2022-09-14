@@ -1,6 +1,6 @@
 #!/bin/sh
 
-pvpn_file="${PVPN_STATUS_FILE:-$XDG_DATA_HOME/smlss/toggle-pvpn-status}"
+pvpn_file="${PVPN_STATUS_FILE:-$SMLSS_DATA_DIR/toggle-pvpn-status}"
 [ ! -d "$(dirname "$pvpn_file")" ] && mkdir -p "$(dirname "$pvpn_file")"
 
 get_last_pvpn_modify() {
