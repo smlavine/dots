@@ -19,7 +19,7 @@ export PS1="\[\033[01;35m\]\$(git symbolic-ref --short HEAD 2>&-)\[\033[01;32m\]
 export LESSHISTFILE="/dev/null"
 
 # Go programming language
-export GOPATH="$HOME/Documents/code/go"
+export GOPATH="$HOME/Code/go"
 export GOBIN="$GOPATH/bin"
 
 # Set XDG Base Directory specification variables.
