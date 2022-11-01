@@ -3,13 +3,13 @@ dots
 These are my dotfiles. They are deployed by
 [smlss](https://sr.ht/~smlavine/smlss).
 
-All dotfiles are located in the ```src/``` directory, organized as if
-they were in ```$HOME```.
+All dotfiles are located in the `src/` directory, organized as if
+they were in `$HOME`.
 
-To install the dotfiles to their proper places, simply run ```make``` or
-```make install```.
+To install the dotfiles to their proper places, simply run `make` or
+`make install`.
 
-To uninstall the dotfiles, run ```make uninstall```.
+To uninstall the dotfiles, run `make uninstall`.
 
 Copyright
 =========
