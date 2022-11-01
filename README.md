@@ -45,7 +45,3 @@ The file
 is an amalgamtion of mostly unoriginal snippets from the Vim wiki and
 from StackOverflow. Therefore, it is licensed under the terms of
 [CC BY-SA 4.0](https://stackoverflow.com/help/licensing).
-
-# Contact
-
-To contact me, Sebastian LaVine, send an email to <mail@smlavine.com>.
