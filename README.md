@@ -1,4 +1,4 @@
-# dots
+# [dots](https://git.sr.ht/~smlavine/dots)
 
 These are my dotfiles. They are deployed by
 [smlss](https://sr.ht/~smlavine/smlss).
