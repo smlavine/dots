@@ -49,6 +49,23 @@ set cinoptions+=:0
 " }
 set cinoptions+=t0
 
+" Indents expressions split across two lines like
+" printf("foo",
+"	bar);
+" instead of
+" printf("foo",
+"		bar);
+set cinoptions+=(s
+
+" Continues to indent split if/for/while expressions like
+" if (foo ==
+"		NULL)
+" instead of like
+" if (foo ==
+"	NULL)
+" which would be the case with the (s cinoption added above.
+set cinoptions+=k2s
+
 set iskeyword-=-
 
 if !isdirectory('/tmp/nvim')
