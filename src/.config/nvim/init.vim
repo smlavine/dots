@@ -66,6 +66,16 @@ set cinoptions+=(s
 " which would be the case with the (s cinoption added above.
 set cinoptions+=k2s
 
+" Indent the closing parenthesis of function calls across multiple lines like
+" printf("foo",
+"	bar
+" );
+" instead of
+" printf("foo",
+"	bar
+"	);
+set cinoptions+=m1
+
 set iskeyword-=-
 
 if !isdirectory('/tmp/nvim')
