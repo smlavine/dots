@@ -72,9 +72,27 @@ dateinfo() {
 	date '+%a %b %d %r %Z'
 }
 
-statusline() {
-	printf ' %s%s %s %s %s' \
-		"$proton" "$(keyinfo)" "$(vol)" "$(dateinfo)" "$(batinfo)"
+set_status() {
+	_batinfo="$(batinfo)"
+	if echo "$_batinfo" | grep -q 'DRN$'; then
+		percentage="$(echo "$_batinfo" | grep -o '^[0-9]*')"
+		if [ "$percentage" -le 5 ]; then
+			# Battery <= 5%. Flash warning and urgent colors.
+			# The color changes on every tick of the loop below.
+			# The color codes are determined by my dwm config.
+			if [ "$flash_batinfo" ]; then
+				_batinfo="$(printf '\x04')$_batinfo"
+				flash_batinfo=
+			else
+				_batinfo="$(printf '\x03')$_batinfo"
+				flash_batinfo=1
+			fi
+		elif [ "$percentage" -le 15 ]; then
+			# Battery <= 15%. Display warning color.
+			_batinfo="$(printf '\x03')$_batinfo"
+		fi
+	fi
+	xsetroot -name "$proton $(keyinfo) $(vol) $(dateinfo) $_batinfo"
 }
 
 setxkbmap -option caps:escape
@@ -133,7 +151,7 @@ if [ "$WM" = "dwm" ]; then
 		else
 			i="$(( i + 1 ))"
 		fi
-		xsetroot -name "$(statusline)"
+		set_status
 		sleep 1
 	done &
 else  # openbox
