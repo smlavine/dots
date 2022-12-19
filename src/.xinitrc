@@ -72,6 +72,11 @@ dateinfo() {
 	date '+%a %b %d %r %Z'
 }
 
+statusline() {
+	printf ' %s%s %s %s %s' \
+		"$proton" "$(keyinfo)" "$(vol)" "$(dateinfo)" "$(batinfo)"
+}
+
 setxkbmap -option caps:escape
 
 # This will probably be useful only on a Thinkpad X220 Tablet.
@@ -128,7 +133,7 @@ if [ "$WM" = "dwm" ]; then
 		else
 			i="$(( i + 1 ))"
 		fi
-		xsetroot -name " $proton$(keyinfo) $(vol) $(dateinfo) $(batinfo)"
+		xsetroot -name "$(statusline)"
 		sleep 1
 	done &
 else  # openbox
