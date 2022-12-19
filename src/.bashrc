@@ -55,9 +55,6 @@ rm -f ~/.recently-used
 # [1]: https://aur.archlinux.org/packages/jo
 unset jo
 
-# disable bash history
-unset HISTFILE
-
 # enable vi editing mode
 set -o vi
 
