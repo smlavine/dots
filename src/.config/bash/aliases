@@ -65,6 +65,8 @@ alias count='{ paste -sd+ - | bc; }'
 
 alias sp='sudo protonvpn'
 
+alias astronvim='XDG_CONFIG_HOME=~/.config/astronvim/ nvim'
+
 # Ascend the directory hierarchy until in a directory with .git/ in it.
 # If ascended all the way to the root directory, return to the original
 # location and print a failure message.
