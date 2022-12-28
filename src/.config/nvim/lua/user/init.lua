@@ -36,22 +36,15 @@ local config = {
         bg = "#000000",
       },
     },
-    -- init = { -- this table overrides highlights in all themes
-    --   Normal = { bg = "#000000" },
-    -- }
-    -- duskfox = { -- a table of overrides/changes to the duskfox theme
-    --   Normal = { bg = "#000000" },
-    -- },
   },
 
   -- set vim options here (vim.<first_key>.<second_key> = value)
   options = {
     opt = {
-      -- set to true or false etc.
       relativenumber = true, -- sets vim.opt.relativenumber
-      number = true, -- sets vim.opt.number
-      spell = false, -- sets vim.opt.spell
-      signcolumn = "auto", -- sets vim.opt.signcolumn to auto
+      number = true,
+      spell = false,
+      signcolumn = "auto",
 
       --
       -- My custom options.
@@ -223,8 +216,6 @@ local config = {
       ["<leader>bc"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
       ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
       ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
-      -- quick save
-      -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
 
       ["<C-c>"] = { "<cmd>noh<cr>", desc = "Disable highlighting of searched terms" },
       ["<leader>bn"] = { "<cmd>tabnext<cr>", desc = "Go to next tab" },
@@ -277,33 +268,6 @@ local config = {
       }
       return config -- return final config table
     end,
-    treesitter = { -- overrides `require("treesitter").setup(...)`
-      -- ensure_installed = { "lua" },
-    },
-    -- use mason-lspconfig to configure LSP installations
-    ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
-      -- ensure_installed = { "sumneko_lua" },
-    },
-    -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
-    ["mason-null-ls"] = { -- overrides `require("mason-null-ls").setup(...)`
-      -- ensure_installed = { "prettier", "stylua" },
-    },
-    ["mason-nvim-dap"] = { -- overrides `require("mason-nvim-dap").setup(...)`
-      -- ensure_installed = { "python" },
-    },
-  },
-
-  -- LuaSnip Options
-  luasnip = {
-    -- Extend filetypes
-    filetype_extend = {
-      -- javascript = { "javascriptreact" },
-    },
-    -- Configure luasnip loaders (vscode, lua, and/or snipmate)
-    vscode = {
-      -- Add paths for including more VS Code style snippets in luasnip
-      paths = {},
-    },
   },
 
   -- CMP Source Priorities
