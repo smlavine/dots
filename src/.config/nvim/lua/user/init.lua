@@ -275,24 +275,13 @@ local config = {
       -- },
       { "Mofiqul/dracula.nvim" },
     },
+
     -- All other entries override the require("<key>").setup({...}) call for default plugins
-    ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
-      -- config variable is the default configuration table for the setup function call
-      -- local null_ls = require "null-ls"
 
-      -- Check supported formatters and linters
-      -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
-      -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
-      config.sources = {
-        -- Set a formatter
-        -- null_ls.builtins.formatting.stylua,
-        -- null_ls.builtins.formatting.prettier,
-      }
-      return config -- return final config table
-    end,
+    ["cmp"] = function(config) -- overrides `require("cmp").setup(config)`
+      -- config value is the default config table for the setup function call
 
-    -- See <https://github.com/hrsh7th/nvim-cmp/wiki/Advanced-techniques#disabling-completion-in-certain-contexts-such-as-comments>.
-    ["cmp"] = function(config)
+      -- See <https://github.com/hrsh7th/nvim-cmp/wiki/Advanced-techniques#disabling-completion-in-certain-contexts-such-as-comments>.
       config.enabled = function()
         -- disable completion in comments
         local context = require 'cmp.config.context'
@@ -304,7 +293,8 @@ local config = {
               and not context.in_syntax_group("Comment")
         end
       end
-      return config
+
+      return config -- Don't forget to return the final config table!
     end,
   },
 
