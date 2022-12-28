@@ -231,6 +231,8 @@ local config = {
       -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
 
       ["<C-c>"] = { "<cmd>noh<cr>", desc = "Disable highlighting of searched terms" },
+      ["<leader>bn"] = { "<cmd>tabnext<cr>", desc = "Go to next tab" },
+      ["<leader>bp"] = { "<cmd>tabprev<cr>", desc = "Go to previous tab" },
     },
     t = {
       -- setting a mapping to false will disable it
