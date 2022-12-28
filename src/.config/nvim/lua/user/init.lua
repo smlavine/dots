@@ -274,6 +274,8 @@ local config = {
       --   end,
       -- },
       { "Mofiqul/dracula.nvim" },
+
+      { "tpope/vim-fugitive" },
     },
 
     -- All other entries override the require("<key>").setup({...}) call for default plugins
