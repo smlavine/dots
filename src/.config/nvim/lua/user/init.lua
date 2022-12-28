@@ -220,6 +220,12 @@ local config = {
       ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
 
       ["<C-c>"] = { "<cmd>noh<cr>", desc = "Disable highlighting of searched terms" },
+
+      ["-"] = { "<cmd>res -1<cr>", desc = "Decrease vertical size of buffer" },
+      ["="] = { "<cmd>res +1<cr>", desc = "Increase vertical size of buffer" },
+      ["<"] = { "<cmd>vertical res -1<cr>", desc = "Decrease horizontal size of buffer" },
+      [">"] = { "<cmd>vertical res +1<cr>", desc = "Increase horizontal size of buffer" },
+      ["+"] = { "<C-w>=", desc = "Reset buffer sizes" },
     },
     t = {
       -- setting a mapping to false will disable it
