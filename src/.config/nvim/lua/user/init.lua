@@ -46,7 +46,6 @@ local config = {
       number = true, -- sets vim.opt.number
       spell = false, -- sets vim.opt.spell
       signcolumn = "auto", -- sets vim.opt.signcolumn to auto
-      wrap = false, -- sets vim.opt.wrap
 
       --
       -- My custom options.
@@ -68,6 +67,7 @@ local config = {
       softtabstop = 8,
       tabstop = 8,
 
+      wrap = true,
     },
     g = {
       mapleader = " ", -- sets vim.g.mapleader
