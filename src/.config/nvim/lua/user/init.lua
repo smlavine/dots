@@ -215,11 +215,11 @@ local config = {
       ["<leader>bb"] = { "<cmd>tabnew<cr>", desc = "New tab" },
       ["<leader>bc"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
       ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
+      ["<leader>bn"] = { "<cmd>tabnext<cr>", desc = "Go to next tab" },
+      ["<leader>bp"] = { "<cmd>tabprev<cr>", desc = "Go to previous tab" },
       ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
 
       ["<C-c>"] = { "<cmd>noh<cr>", desc = "Disable highlighting of searched terms" },
-      ["<leader>bn"] = { "<cmd>tabnext<cr>", desc = "Go to next tab" },
-      ["<leader>bp"] = { "<cmd>tabprev<cr>", desc = "Go to previous tab" },
     },
     t = {
       -- setting a mapping to false will disable it
