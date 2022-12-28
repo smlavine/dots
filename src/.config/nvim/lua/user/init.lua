@@ -219,6 +219,8 @@ local config = {
       ["<leader>bp"] = { "<cmd>tabprev<cr>", desc = "Go to previous tab" },
       ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
 
+      ["<leader>gC"] = { "<cmd>Git commit -ve<cr>", desc = "git commit (fugitive)" },
+
       ["<C-c>"] = { "<cmd>noh<cr>", desc = "Disable highlighting of searched terms" },
 
       ["-"] = { "<cmd>res -1<cr>", desc = "Decrease vertical size of buffer" },
