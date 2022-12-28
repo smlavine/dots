@@ -35,7 +35,7 @@ local config = {
         fg = "#8be9fd",
         bg = "#000000",
       },
-    }
+    },
     -- init = { -- this table overrides highlights in all themes
     --   Normal = { bg = "#000000" },
     -- }
