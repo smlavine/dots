@@ -92,7 +92,7 @@ set_status() {
 			_batinfo="$(printf '\x03')$_batinfo"
 		fi
 	fi
-	xsetroot -name "$proton $(keyinfo) $(vol) $(dateinfo) $_batinfo"
+	xsetroot -name " $proton$(keyinfo) $(vol) $(dateinfo) $_batinfo"
 }
 
 setxkbmap -option caps:escape
