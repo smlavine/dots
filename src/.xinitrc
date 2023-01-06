@@ -69,7 +69,7 @@ batinfo() {
 }
 
 dateinfo() {
-	date '+%a %b %d %r %Y %Z'
+	date '+%a %b %d %r %Z'
 }
 
 set_status() {
