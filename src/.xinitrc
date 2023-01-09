@@ -142,7 +142,7 @@ if [ "$WM" = "dwm" ]; then
 		fi
 
 		if [ ! "$pvpn_status" ]; then
-			proton="<>"
+			proton="<> "
 		elif [ "$i" -ge "$imax" ]; then
 			# We append a space here to be in between proton and keyinfo,
 			# if proton isn't empty.
