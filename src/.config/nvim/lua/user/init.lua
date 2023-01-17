@@ -161,7 +161,6 @@ local config = {
         ignore_filetypes = { -- disable format on save for specified filetypes
           "c",
           "cpp",
-          "html",
         },
       },
       disabled = { -- disable formatting capabilities for the listed language servers
