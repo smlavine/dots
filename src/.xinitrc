@@ -27,6 +27,15 @@ if xrandr | grep -q 'HDMI-0 connected'; then
 	xrandr --output HDMI-0 --mode 2048x1152
 fi
 
+dockd --daemon &
+sleep 0.5
+
+# Set the correct monitor configuration if DP-2 is connected (which means that
+# we are on my ThinkPad laptop, connected to a dock)
+if xrandr | grep -q 'DP-2 connected'; then
+	dockd --set docked
+fi
+
 dunst &
 
 exec "$WM"
