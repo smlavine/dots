@@ -186,20 +186,54 @@ local config = {
     --   require("lspconfig")[server].setup(opts)
     -- end,
 
-    -- Add overrides for LSP server settings, the keys are the name of the server
+    skip_setup = { "jdtls" },
+
     ["server-settings"] = {
-      -- example for addings schemas to yamlls
-      -- yamlls = { -- override table for require("lspconfig").yamlls.setup({...})
-      --   settings = {
-      --     yaml = {
-      --       schemas = {
-      --         ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*.{yml,yaml}",
-      --         ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
-      --         ["http://json.schemastore.org/ansible-stable-2.9"] = "roles/tasks/*.{yml,yaml}",
-      --       },
-      --     },
-      --   },
-      -- },
+      -- set jdtls server settings
+      jdtls = function()
+        -- use this function notation to build some variables
+        local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
+        local root_dir = function()
+          return require('jdtls.setup').find_root(root_markers)
+        end
+
+        -- get the mason install path
+        local install_path = require("mason-registry").get_package("jdtls"):get_install_path()
+
+        -- get the current OS
+        local os
+        if vim.fn.has "macunix" then
+          os = "mac"
+        elseif vim.fn.has "win32" then
+          os = "win"
+        else
+          os = "linux"
+        end
+
+        -- return the server config
+        return {
+          cmd = {
+            "java",
+            "-Declipse.application=org.eclipse.jdt.ls.core.id1",
+            "-Dosgi.bundles.defaultStartLevel=4",
+            "-Declipse.product=org.eclipse.jdt.ls.core.product",
+            "-Dlog.protocol=true",
+            "-Dlog.level=ALL",
+            "-javaagent:" .. install_path .. "/lombok.jar",
+            "-Xms1g",
+            "--add-modules=ALL-SYSTEM",
+            "--add-opens",
+            "java.base/java.util=ALL-UNNAMED",
+            "--add-opens",
+            "java.base/java.lang=ALL-UNNAMED",
+            "-jar",
+            vim.fn.glob(install_path .. "/plugins/org.eclipse.equinox.launcher_*.jar"),
+            "-configuration",
+            install_path .. "/config_" .. os,
+          },
+          root_dir = root_dir
+        }
+      end,
     },
   },
 
@@ -279,6 +313,8 @@ local config = {
       { "Mofiqul/dracula.nvim" },
 
       { "tpope/vim-fugitive" },
+
+      { "mfussenegger/nvim-jdtls" },
     },
 
     -- All other entries override the require("<key>").setup({...}) call for default plugins
