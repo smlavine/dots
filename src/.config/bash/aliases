@@ -65,6 +65,10 @@ alias count='{ paste -sd+ - | bc; }'
 
 alias sp='sudo protonvpn'
 
+# Log in to RIT CS server using mosh, with my mosh-server binary.
+alias ritmosh='mosh --server=/home/stu1/s18/sml1040/.local/bin/mosh-server \
+	sml1040@agamemnon.cs.rit.edu'
+
 # Ascend the directory hierarchy until in a directory with .git/ in it.
 # If ascended all the way to the root directory, return to the original
 # location and print a failure message.
