@@ -26,9 +26,6 @@ alias py='python3'
 
 alias cl='clear; l'
 
-# Sorted list of biggest files/directories in current directory.
-alias dh="du -hd 1 | sort -h"
-
 alias v='nvim'
 
 alias ga='git add'
