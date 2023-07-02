@@ -1,0 +1,10 @@
+# Copy to "/etc/sudoers.d/".
+# The stock Arch Linux /etc/sudoers contains `@includedir /etc/sudoers.d` so
+# this file should be used.
+
+# Allow members of group wheel to execute any command (with a password).
+%wheel ALL=(ALL:ALL) ALL
+
+# Allow members of group wheel to execute light (controls the backlight)
+# WITHOUT A PASSWORD.
+%wheel ALL=(ALL:ALL) NOPASSWD: /usr/bin/light
