@@ -2,12 +2,12 @@
 
 setxkbmap -option caps:escape
 
-# This will probably be useful only on a Thinkpad X220 Tablet.
-# The touch screen will not respond to touch from a finger, but it will still
-# respond to the digitizer pen.
+# This will probably only be useful on a Thinkpad Tablet.
+# This will make it so that the touch screen will not respond to touch from a
+# finger, but will still respond to a digitizer pen.
 # I did this because it is annoying that things are clicked and higlighted
 # when I am wiping dust off the screen.
-xinput disable 'Wacom ISDv4 E6 Finger'
+xinput list --name-only | grep Finger | xargs -I{} xinput disable {}
 
 if [ ! "$WM" ]; then
 	WM="dwm"
