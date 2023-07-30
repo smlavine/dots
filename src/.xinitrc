@@ -15,7 +15,7 @@ fi
 
 if [ "$WM" = "dwm" ]; then
 	dwmblocks &
-else  # openbox
+elif [ "$WM" = "openbox" ]; then
 	tint2 &
 fi
 
