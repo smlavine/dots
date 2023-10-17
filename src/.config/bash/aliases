@@ -34,6 +34,7 @@ alias gam="git status | grep '^[^a-z]*modified' | awk '{ print \$2 }' |
 alias gb='git branch'
 alias gc='git commit -ve'
 alias gd='git diff'
+alias gg='git grep -inF'
 alias gk='git checkout'
 alias gl='git log'
 alias gp='git push'
