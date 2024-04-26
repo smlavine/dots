@@ -4,8 +4,6 @@
 	name = Sebastian LaVine
 [core]
 	editor = nvim
-[commit]
-	gpgSign = true
 [tag]
 	gpgSign = true
 [sendemail]
