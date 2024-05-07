@@ -40,7 +40,7 @@ alias gk='git checkout'
 alias gl='git log'
 alias glf='git log --format=fuller'
 alias gp='git push'
-alias gpa='git remote | xargs -L1 git push'
+alias gpa='git remote | grep -v upstream | xargs -L1 git push'
 alias gpl='git pull'
 alias gr='git restore'
 alias gra="git status | grep '^[^a-z]*modified' | awk '{ print \$2 }' |
