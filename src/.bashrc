@@ -48,7 +48,13 @@ rm -f ~/.python_history
 rm -f ~/.recently-used
 
 # enable autojump
-[ -s /etc/profile.d/autojump.sh ] && source /etc/profile.d/autojump.sh
+standard_arch_source='/etc/profile.d/autojump.sh'
+ubuntu_package_only_has_this_one_source='/usr/share/autojump/autojump.bash'
+if [ -s "$standard_arch_source" ]; then
+	source "$standard_arch_source"
+elif [ -s "$ubuntu_package_only_has_this_one_source" ]; then
+	source "$ubuntu_package_only_has_this_one_source"
+fi
 # but disable jo function; I don't use it and it conflicts with the jo
 # utility [0][1].
 # [0]: https://github.com/jpmens/jo
