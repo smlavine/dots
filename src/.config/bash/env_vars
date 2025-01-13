@@ -53,9 +53,6 @@ export BASH_COMPLETION_USER_FILE="$XDG_CONFIG_HOME/bash_completion"
 # Make weechat follow the XDG Base Directory specification.
 export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
 
-# Make it possible to use GPG when in a non-graphical environment (tty).
-export GPG_TTY="$(tty)"
-
 # A directory to hold files that are accessed by smlss-adjacent processes or
 # aliases, or are otherwise used by the user of smlss.
 export SMLSS_DATA_DIR="$XDG_DATA_HOME/smlss"
