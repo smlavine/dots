@@ -71,6 +71,23 @@ alias count='{ paste -sd+ - | bc; }'
 
 alias sp='sudo protonvpn'
 
+alias ..='cd ./..; pwd'
+alias .2='cd ./..; pwd'
+alias ...='cd ./../..; pwd'
+alias .3='cd ./../..; pwd'
+alias ....='cd ./../../..; pwd'
+alias .4='cd ./../../..; pwd'
+alias .....='cd ./../../../..; pwd'
+alias .5='cd ./../../../..; pwd'
+alias ......='cd ./../../../../..; pwd'
+alias .6='cd ./../../../../..; pwd'
+alias .......='cd ./../../../../../..; pwd'
+alias .7='cd ./../../../../../..; pwd'
+alias ........='cd ./../../../../../../..; pwd'
+alias .8='cd ./../../../../../../..; pwd'
+alias .........='cd ./../../../../../../../..; pwd'
+alias .9='cd ./../../../../../../../..; pwd'
+
 # Ascend the directory hierarchy until in a directory with .git/ in it.
 # If ascended all the way to the root directory, return to the original
 # location and print a failure message.
