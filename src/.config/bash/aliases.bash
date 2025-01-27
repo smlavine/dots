@@ -5,7 +5,6 @@
 
 # Alias definitions.
 
-
 alias ls='ls --color=auto'
 alias l='ls -CAF'
 alias ll='ls -AlhF'
