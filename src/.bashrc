@@ -8,8 +8,8 @@ case $- in
 	*) return;;
 esac
 
-# Source env_vars file.
-[ -f ~/.config/bash/env_vars.bash ] && . ~/.config/bash/env_vars.bash
+# Source exports (environment variable definitions).
+[ -f ~/.config/bash/exports.bash ] && . ~/.config/bash/exports.bash
 
 # Source aliases.
 [ -f ~/.config/bash/aliases.bash ] && . ~/.config/bash/aliases.bash
