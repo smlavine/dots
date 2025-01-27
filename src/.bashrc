@@ -9,7 +9,7 @@ case $- in
 esac
 
 # Source aliases file (which sources env_vars).
-[ -f ~/.config/bash/aliases ] && . ~/.config/bash/aliases
+[ -f ~/.config/bash/aliases.bash ] && . ~/.config/bash/aliases.bash
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

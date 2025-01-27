@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Source env_vars file.
-[ -f ~/.config/bash/env_vars ] && source ~/.config/bash/env_vars
+[ -f ~/.config/bash/env_vars.bash ] && source ~/.config/bash/env_vars.bash
 
 # Source personal aliases.
 [ -f "$SMLSS_PERSONAL_ALIASES" ] && source "$SMLSS_PERSONAL_ALIASES"
