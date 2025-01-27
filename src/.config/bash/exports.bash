@@ -1,6 +1,8 @@
 #!/bin/bash
 
+#
 # Environment variable definitions.
+#
 
 export EDITOR="nvim"
 export VISUAL="nvim"
@@ -10,7 +12,6 @@ export PAGER="less"
 # If in a git repo, print the branch name in magenta before a '$' in green.
 # Ex: 'master$ '
 export PS1="\[\033[01;35m\]\$(git symbolic-ref --short HEAD 2>&-)\[\033[01;32m\]$\[\033[00m\] "
-
 # Alternate: 'user@hostname:~$ ' but with some color in it
 #export PS1='\[\033[01;32m\]\u\[\033[01;31m\]@\[\033[01;36m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;33m\]$\[\033[00m\] '
 
@@ -65,28 +66,56 @@ export SMLSS_PERSONAL_ALIASES="$SMLSS_DATA_DIR/myaliases"
 # This is where I store my screenshots.
 export SCREENSHOT_DIR="$HOME/Documents/pictures/screenshots/"
 
-# Add .local to $PATH
-export PATH="$HOME/.local/bin:$PATH"
-# Add Rust executables to $PATH
-export PATH="$HOME/.cargo/bin:$PATH"
-# Add Go programs to $PATH
-export PATH="$GOBIN:$PATH"
-# Add Ruby programs to $PATH
-export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
-# Add diff-highlight special path if it exists
-if [ -d /usr/share/git/diff-highlight ]; then
-        export PATH="/usr/share/git/diff-highlight:$PATH"
-fi
-
 # Fix broken Java GUIs
 # https://wiki.archlinux.org/title/Java#Gray_window,_applications_not_resizing_with_WM,_menus_immediately_closing
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 export TZDIR="/usr/share/zoneinfo"
 
-# Add sonar-scanner related values
+# Static analysis tool
 # https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/
 export SONAR_SCANNER_HOME="/opt/sonar-scanner"
-export PATH="${SONAR_SCANNER_HOME}/bin:${PATH}"
+
+#
+# PATH construction
+#
+# Centralize path construction here.
+# PATH is exported once per source, cleanly, without duplications.
+#
+
+declare -a paths=(
+        '/bin'
+        '/sbin'
+        '/usr/bin'
+        '/usr/sbin'         # Global packages (i.e. managed by pacman)
+
+        '/usr/local/bin'
+        '/usr/local/sbin'   # Global unpackaged applications
+
+        "$HOME/.local/bin"  # Local unpackaged applications
+
+        "$SONAR_SCANNER_HOME/bin"  # SonarQube
+
+        '/usr/share/git/diff-highlight'  # diff-highlight (git)
+
+        # Special local unpackaged language-specific applications
+        "$HOME/.cargo/bin"                       # Rust
+        "$GOBIN"                                 # Go
+        "$HOME/.local/share/gem/ruby/3.0.0/bin"  # Ruby
+)
+declare -a exists
+for path in "${paths[@]}"; do
+        if [ -d "$path" ]; then
+                exists+=("$path")
+        fi
+done
+oldIFS="$IFS"
+IFS=':'
+export PATH="${exists[*]}"
+IFS="$oldIFS"
+
+#
+# PATH-dependant environment variable definitions.
+#
 
 export SUDO_ASKPASS="$(which askpass)"
