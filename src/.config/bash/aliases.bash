@@ -68,6 +68,7 @@ alias count='{ paste -sd+ - | bc; }'
 alias sp='sudo protonvpn'
 
 alias ..='cd ./..; pwd'
+alias  d='cd ./..; pwd'
 alias .2='cd ./..; pwd'
 alias ...='cd ./../..; pwd'
 alias .3='cd ./../..; pwd'
