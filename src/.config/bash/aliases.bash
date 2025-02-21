@@ -41,6 +41,7 @@ alias gpl='git pull'
 alias gr='git restore'
 alias gra="git status | grep '^[^a-z]*modified' | awk '{ print \$2 }' |
 	xargs git restore"
+alias grc='git rebase --continue'
 alias gre='git remote -v'
 alias gri='git rebase -i'
 alias grl='git reflog'
