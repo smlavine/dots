@@ -10,12 +10,7 @@ alias l='ls -CAF'
 alias ll='ls -AlhF'
 alias lt='ls -AlhFtr'
 
-alias dir='dir --color=auto'
-alias vdir='vdir --color=auto'
-
 alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
 
 alias info='info --vi-keys'
 
