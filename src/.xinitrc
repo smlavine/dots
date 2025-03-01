@@ -29,4 +29,4 @@ fi
 
 dunst &
 
-exec "$WM"
+exec ssh-agent "$WM"
