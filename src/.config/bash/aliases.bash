@@ -40,7 +40,7 @@ alias gra="git status | grep '^[^a-z]*modified' | awk '{ print \$2 }' |
 alias grc='git rebase --continue'
 alias gre='git remote -v'
 alias gri='git rebase -i'
-alias grl='git reflog'
+alias grl='git reflog --relative-date'
 alias gs='git status'
 alias gsl='git shortlog'
 alias gsh='git show --format=fuller'
