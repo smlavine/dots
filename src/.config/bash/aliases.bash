@@ -50,6 +50,8 @@ alias gcp='git cherry-pick'
 alias m='make'
 alias mc='make clean'
 alias md='make debug'
+alias mr='make release'
+alias mci='make clean install'
 alias mi='make install'
 
 alias f='new firefox'
