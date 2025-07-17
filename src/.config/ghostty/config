@@ -42,7 +42,10 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
+# Theme: Dracula
 theme = Dracula
+# (but with a softer background color, like I have in my st config)
+background = #282a36
 # Disable automatic blinking cursor
 cursor-style-blink = false
 # Disable blinking cursor at shell anyway
