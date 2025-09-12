@@ -84,6 +84,9 @@ export SONAR_SCANNER_HOME="/opt/sonar-scanner"
 #
 
 declare -a paths=(
+        # Manual Zig 0.15.1 copy (until Arch updates)
+        "$HOME/Downloads/zig-x86_64-linux-0.15.1/"
+
         '/bin'
         '/sbin'
         '/usr/bin'
