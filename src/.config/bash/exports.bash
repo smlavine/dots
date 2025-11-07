@@ -72,10 +72,6 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 export TZDIR="/usr/share/zoneinfo"
 
-# Static analysis tool
-# https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/
-export SONAR_SCANNER_HOME="/opt/sonar-scanner"
-
 #
 # PATH construction
 #
@@ -93,8 +89,6 @@ declare -a paths=(
         '/usr/local/sbin'   # Global unpackaged applications
 
         "$HOME/.local/bin"  # Local unpackaged applications
-
-        "$SONAR_SCANNER_HOME/bin"  # SonarQube
 
         '/usr/share/git/diff-highlight'  # diff-highlight (git)
 
