@@ -9,6 +9,11 @@ setxkbmap -option caps:escape
 # when I am wiping dust off the screen.
 xinput list --name-only | grep Finger | xargs -I{} xinput disable {}
 
+# Reversing these values will result in "natural scrolling", a la other DEs
+# such as KDE Plasma. See synaptics(4).
+synclient VertScrollDelta=-29
+synclient HorizScrollDelta=-29
+
 if [ ! "$WM" ]; then
 	WM="dwm"
 fi
