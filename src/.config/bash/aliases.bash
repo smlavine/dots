@@ -54,6 +54,10 @@ alias mr='make release'
 alias mci='make clean install'
 alias mi='make install'
 
+alias zb='zig build'
+alias zbr='zig build run'
+alias zbt='zig build test'
+
 alias f='new firefox'
 alias s='new sxiv'
 alias x='new xournalpp'
