@@ -56,7 +56,7 @@ alias mi='make install'
 
 alias zb='zig build'
 alias zbr='zig build run'
-alias zbt='zig build test'
+alias zbt='zig build test --summary=all'
 
 alias f='new firefox'
 alias s='new sxiv'
