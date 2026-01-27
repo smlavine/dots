@@ -55,3 +55,9 @@ font-feature = -calt, -liga, -dlig
 
 # New terminal windows open in new directory
 window-inherit-working-directory = false
+
+#
+# Custom keybindings
+#
+keybind = alt+j=goto_split:previous
+keybind = alt+k=goto_split:next
