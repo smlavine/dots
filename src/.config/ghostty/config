@@ -52,3 +52,6 @@ cursor-style-blink = false
 shell-integration-features = no-cursor
 # Disable ligatures
 font-feature = -calt, -liga, -dlig
+
+# New terminal windows open in new directory
+window-inherit-working-directory = false
