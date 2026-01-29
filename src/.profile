@@ -16,7 +16,13 @@ fi
 # Display neofetch on user login. I think it looks cool, okay?
 neofetch
 
-# Run startx only if a dwm process is not already running. This allows the user
-# to open a text terminal in another tty.
-[ "$(ps -a | grep dwm)" ] && echo "dwm already running" || startx
-
+# If KDE Plasma is not yet running, start KDE Plasma.
+# If KDE Plasma is already running, start dwm.
+# If dwm is already running, do nothing.
+if [ ! "$(ps -a | grep startplasma)" ]; then
+    startplasma-wayland
+elif [ ! "$(ps -a | grep dwm)" ]; then
+    startx  # dwm
+else
+    echo 'dwm already running'
+fi
