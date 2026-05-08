@@ -54,9 +54,9 @@ alias mr='make release'
 alias mci='make clean install'
 alias mi='make install'
 
-alias zb='zig build --prominent-compile-errors'
-alias zbr='zig build run --prominent-compile-errors'
-alias zbt='zig build test --prominent-compile-errors --summary all'
+alias zb='zig build --error-style minimal'
+alias zbr='zig build run --error-style minimal'
+alias zbt='zig build test --error-style minimal --summary all'
 
 alias f='new firefox'
 alias s='new sxiv'
